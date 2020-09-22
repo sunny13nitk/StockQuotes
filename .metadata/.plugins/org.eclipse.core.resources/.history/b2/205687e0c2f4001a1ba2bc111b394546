@@ -1,0 +1,9 @@
+package pp.springboot.rest;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class CustomerRestController
+{
+	
+}

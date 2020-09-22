@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<StatsAttrList>
+	<!-- <statAttrs> <attrName>Nett. Sales</attrName> <figuresSrvBean>NA</figuresSrvBean> <sheetName>BalanceSheet</sheetName> <fieldName>NettSales</fieldName> 
+		<keyfldName>year</keyfldName> <trendON>true</trendON> <deltaON>true</deltaON> <avgON>false</avgON> <avgdeltaON>true</avgdeltaON> <highBetterON>false</highBetterON> 
+		<selfsecSpON>false</selfsecSpON> <avgDeltasecSpON>true</avgDeltasecSpON> <avgDeltaglobalON>true</avgDeltaglobalON> <longtermIncON>true</longtermIncON> 
+		<alertON>true</alertON> <compSign></compSign> <alertDetSrvBean>TBD</alertDetSrvBean> <alertMsg>TBDMSG</alertMsg> </statAttrs> -->
+
+	<!-- Nett Sales -->
+	<statAttrs>
+		<attrName>Nett. Sales</attrName>
+		<sheetName>BalanceSheet</sheetName>
+		<fieldName>NettSales</fieldName>
+		<keyfldName>year</keyfldName>
+		<wrtFaceValue>false</wrtFaceValue>
+		<singleVal>false</singleVal>
+		<trendON>true</trendON>
+		<deltaON>true</deltaON>
+		<avgON>false</avgON>
+		<avgdeltaON>true</avgdeltaON>
+		<selfsecSpON>false</selfsecSpON>
+		<avgDeltasecSpON>true</avgDeltasecSpON>
+		<avgDeltaglobalON>true</avgDeltaglobalON>
+		<longtermIncON>true</longtermIncON>
+		<alertON>true</alertON>
+		<alertDetSrvBean>AlertProcessor_NettSales</alertDetSrvBean>
+		<mShareAnalysisON>true</mShareAnalysisON>
+	</statAttrs>
+
+	<!--Nett. Profit -->
+	<statAttrs>
+		<attrName>Nett. Profit</attrName>
+		<sheetName>BalanceSheet</sheetName>
+		<fieldName>NettProfit</fieldName>
+		<keyfldName>year</keyfldName>
+		<wrtFaceValue>false</wrtFaceValue>
+		<singleVal>false</singleVal>
+		<trendON>true</trendON>
+		<deltaON>true</deltaON>
+		<avgON>false</avgON>
+		<avgdeltaON>true</avgdeltaON>
+		<selfsecSpON>false</selfsecSpON>
+		<avgDeltasecSpON>true</avgDeltasecSpON>
+		<avgDeltaglobalON>true</avgDeltaglobalON>
+		<longtermIncON>true</longtermIncON>
+		<alertON>true</alertON>
+		<alertDetSrvBean>AlertProcessor_NettProfit</alertDetSrvBean>
+		<mShareAnalysisON>true</mShareAnalysisON>
+	</statAttrs>
+
+	<!--Total Debt. -->
+	<statAttrs>
+		<attrName>Total Debt</attrName>
+		<figuresSrvBean>KFG_TotalDebt_Srv</figuresSrvBean>
+		<wrtFaceValue>false</wrtFaceValue>
+		<singleVal>false</singleVal>
+		<trendON>true</trendON>
+		<deltaON>true</deltaON>
+		<avgON>false</avgON>
+		<avgdeltaON>true</avgdeltaON>
+		<highBetterON>false</highBetterON>
+		<selfsecSpON>false</selfsecSpON>
+		<avgDeltasecSpON>true</avgDeltasecSpON>
+		<avgDeltaglobalON>true</avgDeltaglobalON>
+		<longtermIncON>false</longtermIncON>
+		<alertON>true</alertON>
+		<alertDetSrvBean>AlertProcessor_TotalDebt</alertDetSrvBean>
+	</statAttrs>
+
+	<!--Capex Borrowings Ratio. -->
+	<statAttrs>
+		<attrName>Capex Borrowings Ratio</attrName>
+		<figuresSrvBean>KFG_CapexBwRatio_Srv</figuresSrvBean>
+		<wrtFaceValue>false</wrtFaceValue>
+		<singleVal>false</singleVal>
+		<trendON>true</trendON>
+		<deltaON>true</deltaON>
+		<avgON>true</avgON>
+		<avgdeltaON>true</avgdeltaON>
+		<highBetterON>true</highBetterON>
+		<selfsecSpON>true</selfsecSpON>
+		<avgDeltasecSpON>true</avgDeltasecSpON>
+		<avgDeltaglobalON>true</avgDeltaglobalON>
+		<longtermIncON>true</longtermIncON>
+		<alertON>true</alertON>
+		<alertDetSrvBean>AlertProcessor_CapexBwRatio</alertDetSrvBean>
+	</statAttrs>
+
+	<!--Debt Reserves Ratio -->
+	<statAttrs>
+		<attrName>Debt Reserves Ratio</attrName>
+		<figuresSrvBean>KFG_DebtRsrvRatio_Srv</figuresSrvBean>
+		<wrtFaceValue>false</wrtFaceValue>
+		<singleVal>false</singleVal>
+		<trendON>true</trendON>
+		<deltaON>true</deltaON>
+		<avgON>true</avgON>
+		<avgdeltaON>true</avgdeltaON>
+		<highBetterON>false</highBetterON>
+		<selfsecSpON>true</selfsecSpON>
+		<avgDeltasecSpON>true</avgDeltasecSpON>
+		<avgDeltaglobalON>true</avgDeltaglobalON>
+		<longtermIncON>false</longtermIncON>
+		<alertON>true</alertON>
+		<alertDetSrvBean>AlertProcessor_DebtRsrvRatio</alertDetSrvBean>
+	</statAttrs>
+
+	<!--Reserves Provisions Ratio -->
+	<statAttrs>
+		<attrName>Reserves Provisions Ratio</attrName>
+		<figuresSrvBean>KFG_RsrvProvRatio_Srv</figuresSrvBean>
+		<wrtFaceValue>false</wrtFaceValue>
+		<singleVal>false</singleVal>
+		<trendON>true</trendON>
+		<deltaON>true</deltaON>
+		<avgON>true</avgON>
+		<avgdeltaON>true</avgdeltaON>
+		<highBetterON>true</highBetterON>
+		<selfsecSpON>true</selfsecSpON>
+		<avgDeltasecSpON>true</avgDeltasecSpON>
+		<avgDeltaglobalON>true</avgDeltaglobalON>
+		<longtermIncON>true</longtermIncON>
+		<alertON>true</alertON>
+		<alertDetSrvBean>AlertProcessor_RsrvProvRatio</alertDetSrvBean>
+	</statAttrs>
+
+	<!--Nett. Profit Margin -->
+	<statAttrs>
+		<attrName>Nett. Profit Margin</attrName>
+		<sheetName>BalanceSheet</sheetName>
+		<fieldName>NettProfitMargin</fieldName>
+		<keyfldName>year</keyfldName>
+		<wrtFaceValue>false</wrtFaceValue>
+		<singleVal>false</singleVal>
+		<trendON>true</trendON>
+		<deltaON>true</deltaON>
+		<avgON>true</avgON>
+		<avgdeltaON>true</avgdeltaON>
+		<highBetterON>true</highBetterON>
+		<selfsecSpON>true</selfsecSpON>
+		<avgDeltasecSpON>true</avgDeltasecSpON>
+		<avgDeltaglobalON>true</avgDeltaglobalON>
+		<longtermIncON>true</longtermIncON>
+		<alertON>true</alertON>
+		<alertDetSrvBean>AlertProcessor_NPM</alertDetSrvBean>
+		<mShareAnalysisON>true</mShareAnalysisON>
+	</statAttrs>
+
+	<!--Effective EPS -->
+	<statAttrs>
+		<attrName>Effective EPS</attrName>
+		<!-- <figuresSrvBean>KFG_EffEPS_Srv</figuresSrvBean> -->
+		<sheetName>BalanceSheet</sheetName>
+		<fieldName>EPS</fieldName>
+		<keyfldName>year</keyfldName>
+		<wrtFaceValue>true</wrtFaceValue>
+		<singleVal>false</singleVal>
+		<trendON>true</trendON>
+		<deltaON>true</deltaON>
+		<avgON>true</avgON>
+		<avgdeltaON>true</avgdeltaON>
+		<highBetterON>true</highBetterON>
+		<selfsecSpON>true</selfsecSpON>
+		<avgDeltasecSpON>true</avgDeltasecSpON>
+		<avgDeltaglobalON>true</avgDeltaglobalON>
+		<longtermIncON>true</longtermIncON>
+		<alertON>true</alertON>
+		<alertDetSrvBean>AlertProcessor_EPS</alertDetSrvBean>
+		<mShareAnalysisON>true</mShareAnalysisON>
+	</statAttrs>
+
+	<!--Effective Dividend Per Share -->
+	<statAttrs>
+		<attrName>Effective DPS</attrName>
+		<!-- <figuresSrvBean>KFG_EffDPS_Srv</figuresSrvBean> -->
+		<sheetName>BalanceSheet</sheetName>
+		<fieldName>DPS</fieldName>
+		<keyfldName>year</keyfldName>
+		<wrtFaceValue>true</wrtFaceValue>
+		<singleVal>false</singleVal>
+		<trendON>true</trendON>
+		<deltaON>true</deltaON>
+		<avgON>true</avgON>
+		<avgdeltaON>true</avgdeltaON>
+		<highBetterON>true</highBetterON>
+		<selfsecSpON>true</selfsecSpON>
+		<avgDeltasecSpON>true</avgDeltasecSpON>
+		<avgDeltaglobalON>true</avgDeltaglobalON>
+		<longtermIncON>true</longtermIncON>
+		<alertON>false</alertON>
+		<mShareAnalysisON>true</mShareAnalysisON>
+	</statAttrs>
+
+	<!--Inventory Turnover Ratio -->
+	<statAttrs>
+		<attrName>Inventory Turnover Ratio</attrName>
+		<sheetName>FinancialRatios</sheetName>
+		<fieldName>ITR</fieldName>
+		<keyfldName>Year</keyfldName>
+		<singleVal>false</singleVal>
+		<trendON>true</trendON>
+		<deltaON>true</deltaON>
+		<avgON>true</avgON>
+		<avgdeltaON>true</avgdeltaON>
+		<highBetterON>true</highBetterON>
+		<selfsecSpON>true</selfsecSpON>
+		<avgDeltasecSpON>true</avgDeltasecSpON>
+		<avgDeltaglobalON>true</avgDeltaglobalON>
+		<longtermIncON>true</longtermIncON>
+		<alertON>true</alertON>
+	</statAttrs>
+
+	<!--Debt Equity Ratio -->
+	<statAttrs>
+		<attrName>Debt Equity Ratio</attrName>
+		<sheetName>FinancialRatios</sheetName>
+		<fieldName>DER</fieldName>
+		<keyfldName>Year</keyfldName>
+		<singleVal>false</singleVal>
+		<trendON>true</trendON>
+		<deltaON>true</deltaON>
+		<avgON>true</avgON>
+		<avgdeltaON>true</avgdeltaON>
+		<highBetterON>false</highBetterON>
+		<selfsecSpON>true</selfsecSpON>
+		<avgDeltasecSpON>true</avgDeltasecSpON>
+		<avgDeltaglobalON>true</avgDeltaglobalON>
+		<longtermIncON>false</longtermIncON>
+		<alertON>true</alertON>
+	</statAttrs>
+
+
+	<!--Avg. Price Deviation -->
+	<statAttrs>
+		<attrName>Price Deviation from Avg</attrName>
+		<sheetName>BalanceSheet</sheetName>
+		<fieldName>priceDeviation</fieldName>
+		<keyfldName>year</keyfldName>
+		<singleVal>false</singleVal>
+		<trendON>false</trendON>
+		<deltaON>true</deltaON>
+		<avgON>true</avgON>
+		<avgdeltaON>true</avgdeltaON>
+		<highBetterON>false</highBetterON>
+		<selfsecSpON>true</selfsecSpON>
+		<avgDeltasecSpON>true</avgDeltasecSpON>
+		<avgDeltaglobalON>true</avgDeltaglobalON>
+		<longtermIncON>false</longtermIncON>
+		<alertON>true</alertON>
+	</statAttrs>
+
+	<!--FII Holding -->
+	<statAttrs>
+		<attrName>FII Holding</attrName>
+		<sheetName>ShareHolding</sheetName>
+		<fieldName>fii</fieldName>
+		<singleVal>true</singleVal>
+		<highBetterON>false</highBetterON>
+		<selfsecSpON>true</selfsecSpON>
+	</statAttrs>
+
+
+	<!--Effective Promoter Holding -->
+	<statAttrs>
+		<attrName>Eff. Promoter Holding</attrName>
+		<figuresSrvBean>SVG_EffPromoterHolding</figuresSrvBean>
+		<singleVal>true</singleVal>
+		<highBetterON>true</highBetterON>
+		<selfsecSpON>true</selfsecSpON>
+	</statAttrs>
+
+
+
+</StatsAttrList>

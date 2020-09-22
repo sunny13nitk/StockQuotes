@@ -1,0 +1,6 @@
+package pp.springboot.service.intf;
+
+public interface ICustomerSrv
+{
+	
+}

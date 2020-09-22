@@ -1,0 +1,16 @@
+127.0.0.1 - - [30/Jun/2020:12:22:14 +0530] "GET / HTTP/1.1" 404 709
+0:0:0:0:0:0:0:1 - - [30/Jun/2020:12:22:15 +0530] "GET /spring-rest-demo/ HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [30/Jun/2020:12:22:16 +0530] "GET /spring-rest-demo/hello HTTP/1.1" 200 12
+0:0:0:0:0:0:0:1 - - [30/Jun/2020:12:22:22 +0530] "GET /spring-rest-demo/api/students HTTP/1.1" 200 183
+0:0:0:0:0:0:0:1 - - [30/Jun/2020:12:22:30 +0530] "GET /spring-rest-demo/api/students/1 HTTP/1.1" 200 52
+0:0:0:0:0:0:0:1 - - [30/Jun/2020:12:22:35 +0530] "GET /spring-rest-demo/api/students/99 HTTP/1.1" 404 89
+127.0.0.1 - - [30/Jun/2020:12:39:57 +0530] "GET / HTTP/1.1" 404 709
+0:0:0:0:0:0:0:1 - - [30/Jun/2020:12:40:00 +0530] "GET /web-customer-tracker/ HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [30/Jun/2020:12:40:02 +0530] "GET /web-customer-tracker/customer/list HTTP/1.1" 200 4313
+0:0:0:0:0:0:0:1 - - [30/Jun/2020:12:40:02 +0530] "GET /web-customer-tracker/resources/css/style.css HTTP/1.1" 200 1218
+127.0.0.1 - - [30/Jun/2020:13:11:18 +0530] "GET / HTTP/1.1" 404 709
+0:0:0:0:0:0:0:1 - - [30/Jun/2020:13:11:20 +0530] "GET /spring-crm-rest/ HTTP/1.1" 200 68
+127.0.0.1 - - [30/Jun/2020:15:10:15 +0530] "GET / HTTP/1.1" 404 709
+0:0:0:0:0:0:0:1 - - [30/Jun/2020:15:10:17 +0530] "GET /spring-rest-demo/ HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [30/Jun/2020:15:10:17 +0530] "GET /spring-rest-demo/hello HTTP/1.1" 200 12
+0:0:0:0:0:0:0:1 - - [30/Jun/2020:15:10:21 +0530] "GET /spring-rest-demo/api/students/ssss HTTP/1.1" 400 218

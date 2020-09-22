@@ -1,0 +1,50 @@
+package pp.springboot.dao.impl;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+
+import org.springframework.stereotype.Repository;
+
+import pp.springboot.dao.intf.ICustomerDAO;
+import pp.springboot.entity.Customer;
+
+@Repository
+public class CustomerDAOJPAImpl implements ICustomerDAO
+{
+	
+	@autowired
+	private EntityManager entMgr;
+	
+	public List<Customer> findAll(
+	)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	public Customer findbyId(
+	        int id
+	)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	public void save(
+	        Customer newCustomer
+	)
+	{
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public void deleteById(
+	        int id
+	)
+	{
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

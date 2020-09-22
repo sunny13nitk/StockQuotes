@@ -1,0 +1,18 @@
+package pp.springboot.dao.impl;
+
+import java.util.List;
+
+import pp.springboot.dao.intf.ICustomerDAO;
+import pp.springboot.entity.Customer;
+
+public class CustomerDAOHibernateImpl implements ICustomerDAO
+{
+	
+	public List<Customer> findAll(
+	)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}

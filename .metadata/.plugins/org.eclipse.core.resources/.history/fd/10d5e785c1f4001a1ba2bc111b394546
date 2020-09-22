@@ -1,0 +1,9 @@
+package pp.springboot.dao.intf;
+
+import pp.springboot.entity.Customer;
+
+public interface ICustomerDAO
+{
+	public List<Customer> findAll(
+	);
+}

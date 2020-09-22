@@ -1,0 +1,6 @@
+package root.springdemo.entity;
+
+public class Student
+{
+	
+}

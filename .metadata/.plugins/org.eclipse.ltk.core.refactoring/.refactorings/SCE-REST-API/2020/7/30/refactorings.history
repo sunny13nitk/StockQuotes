@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;EN_SC_General.java&apos; to &apos;SCE-REST-API/src/main/java/root.scripsEngine.uploadEngine.entities&apos;&#x0D;&#x0A;- Original project: &apos;SCE-REST-API&apos;&#x0D;&#x0A;- Destination element: &apos;SCE-REST-API/src/main/java/root.scripsEngine.uploadEngine.entities&apos;&#x0D;&#x0A;- Original element: &apos;root.scripsEngine.uploadEngine.entities.EN_SC_General.java&apos;" description="Copy compilation unit" destination="/src\/main\/java&lt;root.scripsEngine.uploadEngine.entities" element1="/src\/main\/java&lt;root.scripsEngine.uploadEngine.entities{EN_SC_General.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1595403462768" units="1" version="1.0"/>
+</session>

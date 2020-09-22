@@ -1,0 +1,6 @@
+package root.controllers;
+
+public class CustomerController
+{
+	
+}

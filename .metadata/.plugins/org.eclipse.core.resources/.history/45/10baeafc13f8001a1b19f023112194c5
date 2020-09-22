@@ -1,0 +1,37 @@
+package pp.springboot.repo;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.query.Param;
+
+import pp.springboot.entity.Student;
+
+public interface StudentRepo extends JpaRepository<Student, Integer>
+{
+	// find by last name - ignoring case and sorting result list by First Name in Ascending Order
+	public List<Student> findAllByLastNameIgnoreCaseOrderByFirstNameAsc(
+	        @Param("lName") String lName
+	);
+	
+	// find by first name - Ignoring Case
+	public List<Student> findAllByFirstNameIgnoreCase(
+	        @Param("fName") String fname
+	);
+	
+	// find by first or last name - Ignoring Case
+	public List<Student> findAllByFirstNameAndLastNameIgnoreCase(
+	        @Param("fName") String fname, @Param("lName") String lname
+	);
+	
+	// Find Student by Parent Name - Relational Context
+	public List<Student> findAllByFamilyInfoParentNameIgnoreCase(
+	        @Param("parentName") String parentName
+	);
+	
+	// Find Student by Email containing specific characters; eg. find all students using gmail etc.
+	public List<Student> findAllByEmailContaining(
+	        @Param("pattern") String pattern
+	);
+	
+}

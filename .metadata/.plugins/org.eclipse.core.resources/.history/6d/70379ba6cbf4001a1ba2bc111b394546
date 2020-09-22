@@ -1,0 +1,26 @@
+package pp.springboot.rest;
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import pp.springboot.entity.Customer;
+
+@RestController
+@RequestMapping(
+    "/api"
+)
+public class CustomerRestController
+{
+	@GetMapping(
+	    "/customers"
+	)
+	public List<Customer> getAllCustomers(
+	)
+	{
+		
+	}
+	
+}

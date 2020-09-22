@@ -1,0 +1,47 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
+<html lang="en">
+<head>
+<title>MY App</title>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<!-- Metro 4 -->
+<link rel="stylesheet"
+		href="https://cdn.metroui.org.ua/v4.3.2/css/metro-all.min.css">
+</head>
+<body>
+
+
+
+
+
+		<div class="container-fluid pos-fixed fixed-top z-top bg-hero"
+				id="header">
+				<header
+						class="app-bar container bg-lightmauve fg-white pos-relative"
+						data-role="appbar" data-expand-point="md">
+						<a href="index.html" class="brand fg-white no-hover text-bold">METRO_4</a>
+						<ul class="app-bar-menu ml-auto text-upper">
+								<li><a href="index.html" class="app-bar-item">Home</a></li>
+								<li><a href="intro.html" class="app-bar-item">Get
+												Started</a></li>
+								<li><a href="m4q-about.html" class="app-bar-item">Components</a></li>
+								<li><a href="examples.html" class="app-bar-item">Examples</a></li>
+								<li><a href="support.html" class="app-bar-item">Support</a></li>
+								<li><a href="https://github.com/olton/Metro-UI-CSS"
+										class="app-bar-item">GitHub</a></li>
+						</ul>
+				</header>
+		</div>
+
+
+
+		<!-- Metro 4 -->
+		<script src="https://cdn.metroui.org.ua/v4.3.2/js/metro.min.js"></script>
+</body>
+</html>

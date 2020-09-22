@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Models>
+	<Model>
+		<Name>Category</Name>
+		<Assemblies>
+			<ObjName>OB_Txn_Catg</ObjName>
+			<Assembly>mypackage.objects.OB_Txn_Catg</Assembly>
+		</Assemblies>
+	</Model>
+	<Model>
+		<Name>ALL</Name>
+		<!--Txn Catg  -->
+		<Assemblies>
+			<ObjName>OB_Txn_Catg</ObjName>
+			<Assembly>mypackage.objects.OB_Txn_Catg</Assembly>
+		</Assemblies>
+		<!-- Account -->
+		<Assemblies>
+			<ObjName>OB_Account</ObjName>
+			<Assembly>mypackage.objects.OB_Account</Assembly>
+		</Assemblies>
+		<!--Address  -->
+		<Assemblies>
+			<ObjName>OB_Address</ObjName>
+			<Assembly>mypackage.objects.OB_Address</Assembly>
+		</Assemblies>
+		<!--Telephone Details  -->
+		<Assemblies>
+			<ObjName>OB_TelDetails</ObjName>
+			<Assembly>mypackage.objects.OB_TelDetails</Assembly>
+		</Assemblies>
+	</Model>
+</Models>

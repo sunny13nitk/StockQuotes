@@ -1,0 +1,30 @@
+package pp.springboot.rest;
+
+import javax.persistence.EntityManager;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import pp.springboot.entity.Student_Family;
+
+@RestController
+@RequestMapping("/students")
+public class StudentRestController
+{
+	@Autowired
+	private EntityManager entMgr;
+	
+	@PutMapping("/{studentId}/familyInfo/{pdId}")
+	public String updateStudentFamilyInfo(
+	        @RequestBody Student_Family familyInfo, @PathVariable int studentId, @PathVariable int pdId
+	)
+	{
+		
+		return null;
+	}
+	
+}

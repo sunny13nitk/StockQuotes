@@ -1,0 +1,115 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="security"
+		uri="http://www.springframework.org/security/tags"%>
+
+<html lang="en">
+<head>
+<title>MY App</title>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta charset="UTF-8">
+<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<!-- Metro 4 -->
+<link rel="stylesheet"
+		href="https://cdn.metroui.org.ua/v4.3.2/css/metro-all.min.css">
+
+
+
+</head>
+<body>
+
+		<!-- <div class="container-fluid pos-fixed fixed-top z-top bg-hero"
+				id="header"> -->
+		<div data-role="appbar" data-expand="true"
+				style="background-color: #A072BE; color: white; padding: 5px">
+				<span class="mif-swarm icon mif-3x fg-white"
+						style="padding-right: 10px; padding-bottom: -5px"></span> My App
+				<ul class="app-bar-menu ml-auto text-upper">
+						<li><a href="${pageContext.request.contextPath}/"><span
+										class="mif-home icon mif-2x fg-white"></span></a></li>
+						<li><a href="index.html" class="app-bar-item">Fund Line</a></li>
+						<li><a href="intro.html" class="app-bar-item">Portfolios</a></li>
+						<li><a href="m4q-about.html" class="app-bar-item">Scrips</a></li>
+						<li><a href="examples.html" class="app-bar-item">Admin</a></li>
+						<li><a href="support.html" class="app-bar-item">Support</a></li>
+						<li><span class="mif-user icon mif-2x fg-white"></span>
+								<ul class="d-menu place-right "
+										style="background: transparent; padding: 10px"
+										data-role="dropdown">
+
+										<li><security:authorize access="isAuthenticated()">
+														<security:authentication property="principal.username" />
+												</security:authorize></li>
+
+
+								</ul></li>
+
+						<li>
+								<div style="background: transparent; padding-top: 10px">
+										<form:form action="${pageContext.request.contextPath}/logout"
+												method="POST">
+
+												<button class="button flat-button"
+														style="background: transparent; color: white"
+														data-role="hint" data-hint-position="bottom"
+														data-cls-hint="bg-transparent fg-mauve"
+														data-hint-text="Logout">
+														<span class="mif-exit icon mif-2x fg-white"></span>
+												</button>
+
+										</form:form>
+								</div>
+						</li>
+				</ul>
+
+
+
+
+		</div>
+
+		<div data-role="carousel" data-cls-bullet="bullet-big"
+				data-auto-start="true" data-bullets-position="right"
+				data-effect="slide" data-effect-func="easeInQuart"
+				data-height="16/9" data-controls-on-mouse="true"
+				data-cls-controls="fg-mauve"
+				data-control-next="<span class='mif-chevron-right fg-mauve'></span>"
+				data-control-prev="<span class='mif-chevron-left fg-mauve'></span>">
+				<div class="slide p-2 pl-10 pr-10">
+						<div class="row flex-align-center h-100">
+								<div class="cell-md-4 text-center">
+										<img src="images/pumba.png" class="img-fluid">
+								</div>
+								<div class="cell-md-8">
+										<h1 class="text-light">Pumba</h1>
+										<p class="mt-4 mb-4">Lorem Ipsum is simply dummy text of
+												the printing and typesetting...</p>
+										<button class="button alert">Show more...</button>
+								</div>
+						</div>
+				</div>
+
+				<div class="slide" data-cover="images/pumba-bg.jpg"></div>
+
+				<div class="slide p-2 pl-10 pr-10" data-cover="images/bg-4.jpg">
+						<div class="row flex-align-center h-100">
+								<div class="cell-md-8">
+										<p class="indent-letter">Lorem Ipsum is simply dummy text
+												of the printing and typesetting...</p>
+								</div>
+								<div class="cell-md-4 text-center">
+										<div class="img-container drop-shadow">
+												<img src="images/timon_pumba.jpg">
+										</div>
+								</div>
+						</div>
+				</div>
+		</div>
+
+
+		<!-- Metro 4 -->
+		<script src="https://cdn.metroui.org.ua/v4.3.2/js/metro.min.js"></script>
+</body>
+</html>

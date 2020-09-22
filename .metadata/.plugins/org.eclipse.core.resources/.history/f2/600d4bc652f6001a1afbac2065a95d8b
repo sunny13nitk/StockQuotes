@@ -1,0 +1,6 @@
+package pp.springboot.entity;
+
+public class Instructor
+{
+	
+}

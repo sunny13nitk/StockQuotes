@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<WorkbookMetadata>
+
+	<!--General Sheet -->
+	<sheetsMetadata>
+		<sheetName>General</sheetName>
+		<bobjName>OB_Scrip_General</bobjName>
+		<requiredCreate>true</requiredCreate>
+		<basesheet>true</basesheet>
+		<collection>false</collection>
+		<propDesc>GENERAL</propDesc>
+		<fieldsDetails>
+			<sheetField>Scrip Code</sheetField>
+			<key>true</key>
+			<mandatory>true</mandatory>
+			<precision_ON>false</precision_ON>
+			<nonZero>false</nonZero>
+			<splitAware>false</splitAware>
+			<objField>scCode</objField>
+		</fieldsDetails>
+		<fieldsDetails>
+			<sheetField>Description</sheetField>
+			<key>false</key>
+			<mandatory>true</mandatory>
+			<precision_ON>false</precision_ON>
+			<nonZero>false</nonZero>
+			<splitAware>false</splitAware>
+			<objField>scName</objField>
+		</fieldsDetails>
+		<fieldsDetails>
+			<sheetField>Sector</sheetField>
+			<key>false</key>
+			<mandatory>true</mandatory>
+			<precision_ON>false</precision_ON>
+			<nonZero>false</nonZero>
+			<splitAware>false</splitAware>
+			<objField>scSector</objField>
+		</fieldsDetails>
+		<fieldsDetails>
+			<sheetField>52wkHigh</sheetField>
+			<key>false</key>
+			<mandatory>true</mandatory>
+			<precision_ON>true</precision_ON>
+			<nonZero>true</nonZero>
+			<splitAware>true</splitAware>
+			<objField>scHigh</objField>
+		</fieldsDetails>
+		<fieldsDetails>
+			<sheetField>52wkLow</sheetField>
+			<key>false</key>
+			<mandatory>true</mandatory>
+			<precision_ON>true</precision_ON>
+			<nonZero>true</nonZero>
+			<splitAware>true</splitAware>
+			<objField>scLow</objField>
+		</fieldsDetails>
+		<fieldsDetails>
+			<sheetField>Face Value</sheetField>
+			<key>false</key>
+			<mandatory>true</mandatory>
+			<precision_ON>true</precision_ON>
+			<nonZero>true</nonZero>
+			<splitAware>true</splitAware>
+			<objField>faceValue</objField>
+		</fieldsDetails>
+		<fieldsDetails>
+			<sheetField>200 DMA</sheetField>
+			<key>false</key>
+			<mandatory>true</mandatory>
+			<precision_ON>true</precision_ON>
+			<nonZero>true</nonZero>
+			<splitAware>true</splitAware>
+			<objField>sc200DMA</objField>
+		</fieldsDetails>
+		<fieldsDetails>
+			<sheetField>Market Cap</sheetField>
+			<key>false</key>
+			<mandatory>true</mandatory>
+			<precision_ON>true</precision_ON>
+			<nonZero>true</nonZero>
+			<splitAware>false</splitAware>
+			<objField>mCap</objField>
+		</fieldsDetails>
+		<fieldsDetails>
+			<sheetField>Url</sheetField>
+			<key>false</key>
+			<mandatory>false</mandatory>
+			<precision_ON>true</precision_ON>
+			<nonZero>false</nonZero>
+			<splitAware>false</splitAware>
+			<objField>url</objField>
+		</fieldsDetails>
+	</sheetsMetadata>
+
+	<!--ShareHolding Sheet -->
+	<sheetsMetadata>
+		<sheetName>ShareHolding</sheetName>
+		<bobjName>OB_Scrip_Shareholding</bobjName>
+		<requiredCreate>false</requiredCreate>
+		<basesheet>false</basesheet>
+		<collection>false</collection>
+		<propDesc>SHAREHOLDING</propDesc>
+		<fieldsDetails>
+			<sheetField>Promoter Holding</sheetField>
+			<key>false</key>
+			<mandatory>true</mandatory>
+			<precision_ON>true</precision_ON>
+			<nonZero>true</nonZero>
+			<splitAware>false</splitAware>
+			<objField>promoter</objField>
+		</fieldsDetails>
+		<fieldsDetails>
+			<sheetField>FII Holding</sheetField>
+			<key>false</key>
+			<mandatory>true</mandatory>
+			<precision_ON>true</precision_ON>
+			<nonZero>false</nonZero>
+			<splitAware>false</splitAware>
+			<objField>fii</objField>
+		</fieldsDetails>
+		<fieldsDetails>
+			<sheetField>DII Holding</sheetField>
+			<key>false</key>
+			<mandatory>true</mandatory>
+			<precision_ON>true</precision_ON>
+			<nonZero>false</nonZero>
+			<splitAware>false</splitAware>
+			<objField>dii</objField>
+		</fieldsDetails>
+		<fieldsDetails>
+			<sheetField>General Public Holding</sheetField>
+			<key>false</key>
+			<mandatory>true</mandatory>
+			<precision_ON>true</precision_ON>
+			<nonZero>true</nonZero>
+			<splitAware>false</splitAware>
+			<objField>general</objField>
+		</fieldsDetails>
+		<fieldsDetails>
+			<sheetField>Pledged Promoter Holding</sheetField>
+			<key>false</key>
+			<mandatory>true</mandatory>
+			<precision_ON>true</precision_ON>
+			<nonZero>false</nonZero>
+			<splitAware>false</splitAware>
+			<objField>pledged</objField>
+		</fieldsDetails>
+	</sheetsMetadata>
+
+	<!--Prices Sheet -->
+	<sheetsMetadata>
+		<sheetName>Prices</sheetName>
+		<bobjName>StDevResult</bobjName>
+		<requiredCreate>false</requiredCreate>
+		<basesheet>false</basesheet>
+		<collection>false</collection>
+		<propDesc>PRICE</propDesc>
+		<entParserBeanName>PricesSheetEntityParser</entParserBeanName>
+	</sheetsMetadata>
+
+	<!--BalanceSheet Sheet -->
+	<sheetsMetadata>
+		<sheetName>BalanceSheet</sheetName>
+		<bobjName>OB_Scrip_BalSheet</bobjName>
+		<requiredCreate>false</requiredCreate>
+		<basesheet>false</basesheet>
+		<collection>true</collection>
+		<propDesc>BALSHEET</propDesc>
+		<updateReqdProcessorBean>BalSheetUpdateEligibilitySrv
+		</updateReqdProcessorBean>
+		<fieldsDetails>
+			<sheetField>Year</sheetField>
+			<key>true</key>
+			<mandatory>true</mandatory>
+			<precision_ON>false</precision_ON>
+			<nonZero>true</nonZero>
+			<splitAware>false</splitAware>
+			<objField>year</objField>
+		</fieldsDetails>
+		<fieldsDetails>
+			<sheetField>Reserves (Rs. Cr.)</sheetField>
+			<key>false</key>
+			<mandatory>false</mandatory>
+			<precision_ON>true</precision_ON>
+			<nonZero>false</nonZero>
+			<splitAware>false</splitAware>
+			<objField>Reserves</objField>
+		</fieldsDetails>
+		<fieldsDetails>
+			<sheetField>Networth (Rs. Cr.)</sheetField>
+			<key>false</key>
+			<mandatory>false</mandatory>
+			<precision_ON>true</precision_ON>
+			<nonZero>true</nonZero>
+			<splitAware>false</splitAware>
+			<objField>netWorth</objField>
+		</fieldsDetails>
+		<fieldsDetails>
+			<sheetField>Secured Loans (Rs. Cr.)</sheetField>
+			<key>false</key>
+			<mandatory>false</mandatory>
+			<precision_ON>true</precision_ON>
+			<nonZero>false</nonZero>
+			<splitAware>false</splitAware>
+			<objField>securedLoans</objField>
+		</fieldsDetails>
+		<fieldsDetails>
+			<sheetField>Unsecured Loans (Rs. Cr.)</sheetField>
+			<key>false</key>
+			<mandatory>false</mandatory>
+			<precision_ON>true</precision_ON>
+			<nonZero>false</nonZero>
+			<splitAware>false</splitAware>
+			<objField>unsecuredLoans</objField>
+		</fieldsDetails>
+		<fieldsDetails>
+			<sheetField>Nett Block (Rs. Cr.)</sheetField>
+			<key>false</key>
+			<mandatory>false</mandatory>
+			<precision_ON>true</precision_ON>
+			<nonZero>true</nonZero>
+			<splitAware>false</splitAware>
+			<objField>NettBlock</objField>
+		</fieldsDetails>
+		<fieldsDetails>
+			<sheetField>Capital Work in Progress (Rs. Cr.)</sheetField>
+			<key>false</key>
+			<mandatory>false</mandatory>
+			<precision_ON>true</precision_ON>
+			<nonZero>false</nonZero>
+			<splitAware>false</splitAware>
+			<objField>CWIP</objField>
+		</fieldsDetails>
+		<fieldsDetails>
+			<sheetField>Investements (Rs. Cr.)</sheetField>
+			<key>false</key>
+			<mandatory>false</mandatory>
+			<precision_ON>true</precision_ON>
+			<nonZero>false</nonZero>
+			<splitAware>false</splitAware>
+			<objField>Investments</objField>
+		</fieldsDetails>
+		<fieldsDetails>
+			<sheetField>Inventories (Rs. Cr.)</sheetField>
+			<key>false</key>
+			<mandatory>false</mandatory>
+			<precision_ON>true</precision_ON>
+			<nonZero>true</nonZero>
+			<splitAware>false</splitAware>
+			<objField>Inventories</objField>
+		</fieldsDetails>
+		<fieldsDetails>
+			<sheetField>Provisions (Rs. Cr.)</sheetField>
+			<key>false</key>
+			<mandatory>true</mandatory>
+			<precision_ON>true</precision_ON>
+			<nonZero>false</nonZero>
+			<splitAware>false</splitAware>
+			<objField>Provisions</objField>
+		</fieldsDetails>
+		<fieldsDetails>
+			<sheetField>Book Value (Rs.)</sheetField>
+			<key>false</key>
+			<mandatory>false</mandatory>
+			<precision_ON>true</precision_ON>
+			<nonZero>true</nonZero>
+			<splitAware>true</splitAware>
+			<objField>BookValue</objField>
+		</fieldsDetails>
+		<fieldsDetails>
+			<sheetField>Nett. Sales (Rs. Cr.)</sheetField>
+			<key>false</key>
+			<mandatory>true</mandatory>
+			<precision_ON>true</precision_ON>
+			<nonZero>true</nonZero>
+			<splitAware>false</splitAware>
+			<objField>NettSales</objField>
+		</fieldsDetails>
+		<fieldsDetails>
+			<sheetField>Nett. Profit (Rs. Cr.)</sheetField>
+			<key>false</key>
+			<mandatory>true</mandatory>
+			<precision_ON>true</precision_ON>
+			<nonZero>true</nonZero>
+			<splitAware>false</splitAware>
+			<objField>NettProfit</objField>
+		</fieldsDetails>
+		<fieldsDetails>
+			<sheetField>EPS (Rs.)</sheetField>
+			<key>false</key>
+			<mandatory>true</mandatory>
+			<precision_ON>true</precision_ON>
+			<nonZero>true</nonZero>
+			<splitAware>false</splitAware>
+			<objField>EPS</objField>
+		</fieldsDetails>
+		<fieldsDetails>
+			<sheetField>Face Value (Rs.)</sheetField>
+			<key>false</key>
+			<mandatory>true</mandatory>
+			<precision_ON>true</precision_ON>
+			<nonZero>true</nonZero>
+			<splitAware>false</splitAware>
+			<objField>FaceValue</objField>
+		</fieldsDetails>
+		<fieldsDetails>
+			<sheetField>Dividend/Share (Rs.)</sheetField>
+			<key>false</key>
+			<mandatory>true</mandatory>
+			<precision_ON>true</precision_ON>
+			<nonZero>false</nonZero>
+			<splitAware>false</splitAware>
+			<objField>DPS</objField>
+		</fieldsDetails>
+		<fieldsDetails>
+			<sheetField>Nett. Profit Margin (%)</sheetField>
+			<key>false</key>
+			<mandatory>true</mandatory>
+			<precision_ON>true</precision_ON>
+			<nonZero>true</nonZero>
+			<splitAware>false</splitAware>
+			<objField>NettProfitMargin</objField>
+		</fieldsDetails>
+	</sheetsMetadata>
+
+	<!--Quarters Data Sheet -->
+	<sheetsMetadata>
+		<sheetName>QuarterlyData</sheetName>
+		<bobjName>OB_Scrip_QuartersData</bobjName>
+		<requiredCreate>false</requiredCreate>
+		<basesheet>false</basesheet>
+		<collection>true</collection>
+		<propDesc>QUARTERS</propDesc>
+		<updateReqdProcessorBean>QtrSheetUpdateEligibilitySrv
+		</updateReqdProcessorBean>
+		<fieldsDetails>
+			<sheetField>Year</sheetField>
+			<key>true</key>
+			<mandatory>true</mandatory>
+			<precision_ON>false</precision_ON>
+			<nonZero>true</nonZero>
+			<splitAware>false</splitAware>
+			<objField>Year</objField>
+		</fieldsDetails>
+		<fieldsDetails>
+			<sheetField>Quarter</sheetField>
+			<key>true</key>
+			<mandatory>true</mandatory>
+			<precision_ON>false</precision_ON>
+			<nonZero>true</nonZero>
+			<splitAware>false</splitAware>
+			<objField>Quarter</objField>
+		</fieldsDetails>
+		<fieldsDetails>
+			<sheetField>Net Sales</sheetField>
+			<key>false</key>
+			<mandatory>true</mandatory>
+			<precision_ON>true</precision_ON>
+			<nonZero>true</nonZero>
+			<splitAware>false</splitAware>
+			<objField>NettSales</objField>
+		</fieldsDetails>
+		<fieldsDetails>
+			<sheetField>Net Profit</sheetField>
+			<key>false</key>
+			<mandatory>true</mandatory>
+			<precision_ON>true</precision_ON>
+			<nonZero>true</nonZero>
+			<splitAware>false</splitAware>
+			<objField>NettProfit</objField>
+		</fieldsDetails>
+
+	</sheetsMetadata>
+
+
+	<!--Financial Ratios Sheet -->
+	<sheetsMetadata>
+		<sheetName>FinancialRatios</sheetName>
+		<bobjName>OB_Scrip_Ratios</bobjName>
+		<requiredCreate>false</requiredCreate>
+		<basesheet>false</basesheet>
+		<collection>true</collection>
+		<propDesc>RATIOS</propDesc>
+		<fieldsDetails>
+			<sheetField>Year</sheetField>
+			<key>true</key>
+			<mandatory>true</mandatory>
+			<precision_ON>false</precision_ON>
+			<nonZero>true</nonZero>
+			<splitAware>false</splitAware>
+			<objField>Year</objField>
+		</fieldsDetails>
+		<fieldsDetails>
+			<sheetField>Current Ratio</sheetField>
+			<key>false</key>
+			<mandatory>true</mandatory>
+			<precision_ON>true</precision_ON>
+			<nonZero>true</nonZero>
+			<splitAware>false</splitAware>
+			<objField>CurrRatio</objField>
+		</fieldsDetails>
+		<fieldsDetails>
+			<sheetField>Quick Ratio</sheetField>
+			<key>false</key>
+			<mandatory>true</mandatory>
+			<precision_ON>true</precision_ON>
+			<nonZero>true</nonZero>
+			<splitAware>false</splitAware>
+			<objField>QuickRatio</objField>
+		</fieldsDetails>
+		<fieldsDetails>
+			<sheetField>Debt Equity Ratio</sheetField>
+			<key>false</key>
+			<mandatory>true</mandatory>
+			<precision_ON>true</precision_ON>
+			<nonZero>false</nonZero>
+			<splitAware>false</splitAware>
+			<objField>DER</objField>
+		</fieldsDetails>
+		<fieldsDetails>
+			<sheetField>Inventory Turnover Ratio</sheetField>
+			<key>false</key>
+			<mandatory>true</mandatory>
+			<precision_ON>true</precision_ON>
+			<nonZero>false</nonZero>
+			<splitAware>false</splitAware>
+			<objField>ITR</objField>
+		</fieldsDetails>
+		<fieldsDetails>
+			<sheetField>Number of Days In Working Capital</sheetField>
+			<key>false</key>
+			<mandatory>true</mandatory>
+			<precision_ON>true</precision_ON>
+			<nonZero>false</nonZero>
+			<splitAware>false</splitAware>
+			<objField>WorkCapDays</objField>
+		</fieldsDetails>
+		<fieldsDetails>
+			<sheetField>Earnings Retention Ratio (%)</sheetField>
+			<key>false</key>
+			<mandatory>true</mandatory>
+			<precision_ON>true</precision_ON>
+			<nonZero>true</nonZero>
+			<splitAware>false</splitAware>
+			<objField>ERR</objField>
+		</fieldsDetails>
+	</sheetsMetadata>
+
+	<!--Expenses Sheet -->
+	<sheetsMetadata>
+		<sheetName>Expenses</sheetName>
+		<bobjName>OB_Scrip_Expenses</bobjName>
+		<requiredCreate>false</requiredCreate>
+		<basesheet>false</basesheet>
+		<collection>true</collection>
+		<propDesc>EXPENSES</propDesc>
+		<fieldsDetails>
+			<sheetField>Year</sheetField>
+			<key>true</key>
+			<mandatory>true</mandatory>
+			<precision_ON>false</precision_ON>
+			<nonZero>true</nonZero>
+			<splitAware>false</splitAware>
+			<objField>Year</objField>
+		</fieldsDetails>
+		<fieldsDetails>
+			<sheetField>Cost of Raw Materials (Rs. Cr.)</sheetField>
+			<key>false</key>
+			<mandatory>true</mandatory>
+			<precision_ON>false</precision_ON>
+			<nonZero>false</nonZero>
+			<splitAware>false</splitAware>
+			<objField>CostRawMt</objField>
+		</fieldsDetails>
+		<fieldsDetails>
+			<sheetField>Power and Fuel Cost (Rs. Cr.)</sheetField>
+			<key>false</key>
+			<mandatory>false</mandatory>
+			<precision_ON>true</precision_ON>
+			<nonZero>false</nonZero>
+			<splitAware>false</splitAware>
+			<objField>CostPwFuel</objField>
+		</fieldsDetails>
+		<fieldsDetails>
+			<sheetField>Employee Cost (Rs. Cr.)</sheetField>
+			<key>false</key>
+			<mandatory>true</mandatory>
+			<precision_ON>true</precision_ON>
+			<nonZero>true</nonZero>
+			<splitAware>false</splitAware>
+			<objField>CostEmp</objField>
+		</fieldsDetails>
+		<fieldsDetails>
+			<sheetField>Miscellaneous Expenses (Rs. Cr.)</sheetField>
+			<key>false</key>
+			<mandatory>true</mandatory>
+			<precision_ON>true</precision_ON>
+			<nonZero>false</nonZero>
+			<splitAware>false</splitAware>
+			<objField>CostMisc</objField>
+		</fieldsDetails>
+
+	</sheetsMetadata>
+
+
+	<!--Raw Materials Sheet -->
+	<sheetsMetadata>
+		<sheetName>RawMaterials</sheetName>
+		<bobjName>OB_Scrip_RawMaterial</bobjName>
+		<requiredCreate>false</requiredCreate>
+		<basesheet>false</basesheet>
+		<collection>true</collection>
+		<propDesc>RAWMATERIAL</propDesc>
+		<entParserBeanName>RawMaterialSheetEntityParser</entParserBeanName>
+		<fieldsDetails>
+			<sheetField>Year</sheetField>
+			<key>true</key>
+			<mandatory>true</mandatory>
+			<precision_ON>false</precision_ON>
+			<nonZero>true</nonZero>
+			<splitAware>false</splitAware>
+			<objField>Year</objField>
+		</fieldsDetails>
+		<fieldsDetails>
+			<sheetField>Raw Material Category</sheetField>
+			<key>true</key>
+			<mandatory>true</mandatory>
+			<precision_ON>false</precision_ON>
+			<nonZero>false</nonZero>
+			<splitAware>false</splitAware>
+			<objField>RawMCatg</objField>
+		</fieldsDetails>
+		<fieldsDetails>
+			<sheetField>Raw Materials (Separated by Comma ',')</sheetField>
+			<key>false</key>
+			<mandatory>true</mandatory>
+			<precision_ON>false</precision_ON>
+			<nonZero>false</nonZero>
+			<splitAware>false</splitAware>
+			<objField>RawM</objField>
+		</fieldsDetails>
+		<fieldsDetails>
+			<sheetField>Percentage Contribution to RMC</sheetField>
+			<key>false</key>
+			<mandatory>true</mandatory>
+			<precision_ON>true</precision_ON>
+			<nonZero>true</nonZero>
+			<splitAware>false</splitAware>
+			<objField>PerRMC</objField>
+		</fieldsDetails>
+
+	</sheetsMetadata>
+
+
+	<!--Finished Products -->
+	<sheetsMetadata>
+		<sheetName>FinishedProducts</sheetName>
+		<bobjName>OB_Scrip_FinishedProduct</bobjName>
+		<requiredCreate>false</requiredCreate>
+		<basesheet>false</basesheet>
+		<collection>true</collection>
+		<propDesc>FINPROD</propDesc>
+		<entParserBeanName>FinishedProductSheetEntityParser</entParserBeanName>
+		<fieldsDetails>
+			<sheetField>Year</sheetField>
+			<key>true</key>
+			<mandatory>true</mandatory>
+			<precision_ON>false</precision_ON>
+			<nonZero>true</nonZero>
+			<splitAware>false</splitAware>
+			<objField>Year</objField>
+		</fieldsDetails>
+		<fieldsDetails>
+			<sheetField>Finished Product Category</sheetField>
+			<key>true</key>
+			<mandatory>true</mandatory>
+			<precision_ON>false</precision_ON>
+			<nonZero>false</nonZero>
+			<splitAware>false</splitAware>
+			<objField>FPCatg</objField>
+		</fieldsDetails>
+		<fieldsDetails>
+			<sheetField>Percentage Contribution to Sales</sheetField>
+			<key>false</key>
+			<mandatory>true</mandatory>
+			<precision_ON>true</precision_ON>
+			<nonZero>true</nonZero>
+			<splitAware>false</splitAware>
+			<objField>PerSales</objField>
+		</fieldsDetails>
+	</sheetsMetadata>
+
+
+</WorkbookMetadata>

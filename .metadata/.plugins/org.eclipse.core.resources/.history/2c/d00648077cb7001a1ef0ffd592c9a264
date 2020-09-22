@@ -1,0 +1,6 @@
+package root.springdemo.Exceptions;
+
+public class ErrorResponsePOJO
+{
+	
+}

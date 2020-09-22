@@ -1,0 +1,257 @@
+package root.Aspects;
+
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Method;
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Date;
+import java.util.UUID;
+
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import root.annotations.DBMark;
+import root.annotations.POJO;
+import root.entity.SessionI;
+import root.enums.Enums;
+import root.services.interfaces.ISessionSrv;
+
+@Aspect
+@Component
+/*
+ * Log and Monitor DB Transactions within a User Session
+ */
+public class DBAspect
+{
+	@Autowired
+	private ISessionSrv sessSrv;
+	
+	// ADVICES
+	
+	/*
+	 * Around All Getters & @DBMark Annotation log the details and elapsed time for DB Operation
+	 * @Around Advice is needed since time computation before and after DB Operation is to be computed
+	 */
+	
+	@Around(
+	    "allDAOGetters() || onDBMarkAnnotations()"
+	)
+	public void logDBOperations(
+	        ProceedingJoinPoint pjp
+	) throws Throwable
+	{
+		if (pjp != null && sessSrv != null)
+		{
+			String  DAOName        = pjp.getTarget().getClass().getSimpleName();
+			String  methodName     = pjp.getSignature().getName();
+			String  entName        = null;
+			String  msg            = null;
+			boolean pojoAnnfound   = false;
+			boolean dbmarkAnnfound = false;
+			Object  result         = null;
+			
+			// Get POJO NAme by @POJO Annotation if pjp annotated
+			POJO pjAnn = pjp.getTarget().getClass().getAnnotation(root.annotations.POJO.class);
+			if (pjAnn != null)
+			{
+				entName      = pjAnn.EntityName();
+				pojoAnnfound = true;
+			}
+			
+			// Get @DBMark Properties if pjp annotated
+			DBMark annDBMark = (DBMark) this.getAnnotationforJPbyAnnType(pjp, root.annotations.DBMark.class);
+			if (annDBMark != null)
+			{
+				dbmarkAnnfound = true;
+				if (pjp.getArgs() != null)
+				{
+					for (Object arg : pjp.getArgs())
+					{
+						msg += arg.toString();
+					}
+				}
+				
+				annDBMark.msg().replace("?", msg);
+				
+			}
+			
+			// PJP Arguments (Name Value pair) concatenated in a String
+			String args = new String();
+			if (pjp.getArgs() != null)
+			{
+				for (Object arg : pjp.getArgs())
+				{
+					args = args + arg.getClass().getSimpleName() + "-" + arg.toString() + "|";
+					
+				}
+			}
+			
+			// Time Elapsed for DBExecution
+			long before = System.currentTimeMillis();
+			result = pjp.proceed();
+			long end      = System.currentTimeMillis();
+			long duration = end - before;
+			
+			// Result Size for Get Operation
+			int size = 0;
+			if (result != null)
+			{
+				if (result instanceof Collection<?>)
+				{
+					size = ((Collection<?>) result).size();
+				} else
+					size = 1;
+			}
+			
+			// Populate Session Item Instance
+			if (sessSrv != null)
+			{
+				if (sessSrv.getSessionHeader() != null)
+				{
+					UUID     sessHGuid = sessSrv.getSessionHeader().getSessionGuid();
+					SessionI sessI     = new SessionI(sessSrv.getSessionHeader().getSessionGuid());
+					if (sessI != null)
+					{
+						sessI.setAspectName(this.getClass().getSimpleName());
+						if (pojoAnnfound = true)
+						{
+							sessI.setArtifactName(DAOName + "for Entity " + entName);
+						} else
+						{
+							sessI.setArtifactName(DAOName);
+						}
+						
+						sessI.setMethodName(methodName);
+						sessI.setTimeStamp(new Timestamp(new Date().getTime()));
+						sessI.setArgs(args);
+						if (dbmarkAnnfound = true)
+						{
+							sessI.setOpType(annDBMark.dbOperation());
+							sessI.setMessage(msg);
+						} else
+						{
+							sessI.setOpType(Enums.dbOperation.Read);
+							sessI.setMessage("# Entities Obtained : " + size);
+						}
+						
+						sessI.setTimeElapsed(duration);
+						
+						sessSrv.getSessionHeader().addSessionItem(sessI);
+					}
+					
+				}
+			}
+			
+		}
+		
+	}
+	
+	// POINTCUTS
+	/*
+	 * On all Getters within DAO Package irrespective of Params(0 to any)
+	 */
+	
+	@Pointcut(
+	    "execution( * root.DAO.impl.*.get*(..))"
+	)
+	public void allDAOGetters(
+	)
+	{
+		
+	}
+	
+	/*
+	 * ON @DBMark Annotations - Specific DB Update Operations to be Tracked
+	 */
+	@Pointcut(
+	    "@annotation(root.annotations.DBMark)"
+	)
+	public void onDBMarkAnnotations(
+	)
+	{
+		
+	}
+	
+	// PRIVATE ROUTINES
+	@SuppressWarnings(
+	    "unused"
+	)
+	private Annotation getAnnotationforObjbyAnnType(
+	        Object obj, final Class<? extends Annotation> annotation
+	)
+	{
+		Annotation ann = null;
+		
+		if (obj != null)
+		{
+			
+			Class<?> klass = obj.getClass();
+			
+			final ArrayList<Method> allMethods = new ArrayList<Method>(Arrays.asList(klass.getDeclaredMethods()));
+			for (final Method method : allMethods)
+			{
+				if (method.isAnnotationPresent(annotation))
+				{
+					ann = method.getAnnotation(annotation);
+					// TODO process annotInstance
+					// methods.add(method);
+				}
+			}
+			
+		}
+		
+		return ann;
+	}
+	
+	/*
+	 * Get Annotation for a Join or Proceeding JoinPoint for a fully Qualified Annotation Class For Multiple Instances
+	 * of same Annotation over various Jp.Target- Class Methods, only the one where out of the signature of target
+	 * Methods matches the signature of invoked JP/PJP , the annotation is returned e.g. @DBMark on both save and delete
+	 * method in DAO class ; but at runtime if delete method is triggered the Annotation on Delete Method is only
+	 * returned
+	 */
+	private Annotation getAnnotationforJPbyAnnType(
+	        Object jp, final Class<? extends Annotation> annotation
+	        )
+	{
+		Annotation ann = null;
+		
+		if (jp != null)
+		{
+			if (jp instanceof JoinPoint || jp instanceof ProceedingJoinPoint)
+			{
+				JoinPoint jpCast = (JoinPoint) jp; // Join point in Super Interface of PJP so will cast to more generic
+				
+				Class<?> klass = jpCast.getTarget().getClass();
+				
+				final ArrayList<Method> allMethods = new ArrayList<Method>(Arrays.asList(klass.getDeclaredMethods()));
+				for (final Method method : allMethods)
+				{
+					if (method.isAnnotationPresent(annotation))
+					{
+						if (method.getName().equals(jpCast.getSignature().getName()))
+						{
+							/*
+							 * Looking Specifically for Join Point Method if the Class has multiple same Annotations
+							 */
+							ann = method.getAnnotation(annotation);
+						}
+						
+					}
+				}
+				
+			}
+			
+		}
+		
+		return ann;
+	}
+	
+}

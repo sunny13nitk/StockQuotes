@@ -1,0 +1,13 @@
+127.0.0.1 - - [27/Aug/2020:10:29:04 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [27/Aug/2020:10:29:05 +0530] "GET /spring-security-customlogin/ HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [27/Aug/2020:10:29:06 +0530] "GET /spring-security-customlogin/myLoginPage HTTP/1.1" 200 2357
+0:0:0:0:0:0:0:1 - - [27/Aug/2020:10:29:06 +0530] "GET /metro/js/metro.js HTTP/1.1" 404 776
+0:0:0:0:0:0:0:1 - - [27/Aug/2020:10:29:37 +0530] "POST /spring-security-customlogin/authenticateUser HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [27/Aug/2020:10:29:37 +0530] "GET /spring-security-customlogin/ HTTP/1.1" 200 7110
+0:0:0:0:0:0:0:1 - - [27/Aug/2020:10:29:39 +0530] "GET /spring-security-customlogin/scrips/main HTTP/1.1" 200 5660
+0:0:0:0:0:0:0:1 - - [27/Aug/2020:10:29:41 +0530] "GET /spring-security-customlogin/scrips/fa?did=3Yr HTTP/1.1" 200 19948
+0:0:0:0:0:0:0:1 - - [27/Aug/2020:10:32:22 +0530] "GET /spring-security-customlogin/scrips/fa?did=5Yr HTTP/1.1" 200 19939
+0:0:0:0:0:0:0:1 - - [27/Aug/2020:10:33:12 +0530] "GET /spring-security-customlogin/scrips/main HTTP/1.1" 200 5660
+0:0:0:0:0:0:0:1 - - [27/Aug/2020:10:33:24 +0530] "POST /spring-security-customlogin/logout HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [27/Aug/2020:10:33:24 +0530] "GET /spring-security-customlogin/myLoginPage?logout HTTP/1.1" 200 2357
+0:0:0:0:0:0:0:1 - - [27/Aug/2020:10:33:24 +0530] "GET /metro/js/metro.js HTTP/1.1" 404 776

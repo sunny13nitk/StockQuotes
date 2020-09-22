@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="118" key="org.eclipse.jdt.debug.ui.jre_preference_page_context.columnWidth2"/>
+	<item value="1" key="org.eclipse.jdt.debug.ui.jre_preference_page_context.sortColumn"/>
+	<item value="415" key="org.eclipse.jdt.debug.ui.jre_preference_page_context.columnWidth1"/>
+	<item value="155" key="org.eclipse.jdt.debug.ui.jre_preference_page_context.columnWidth0"/>
+	<section name="org.eclipse.jdt.internal.debug.ui.ExpressionInformationControlCreator$ExpressionInformationControl">
+		<item value="200" key="SashWeightTree"/>
+		<item value="200" key="SashWeightDetails"/>
+		<item value="1020" key="WIDTH"/>
+		<item value="320" key="HEIGHT"/>
+	</section>
+	<section name="org.eclipse.jdt.debug.ui.MAIN_METHOD_SELECTION_DIALOG">
+		<item value="true" key="ShowStatusLine"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;History&gt;&#x0D;&#x0A;&lt;historyRootNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=sb_app_starter/C:\/Users\/I057386\/.m2\/repository\/org\/apache\/tomcat\/embed\/tomcat-embed-core\/9.0.37\/tomcat-embed-core-9.0.37.jar&amp;lt;org.apache.catalina.startup(Tomcat.class[Tomcat&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=sb_app_starter/C:\/Users\/I057386\/.m2\/repository\/org\/springframework\/boot\/spring-boot\/2.3.3.RELEASE\/spring-boot-2.3.3.RELEASE.jar&amp;lt;org.springframework.boot(SpringApplication.class[SpringApplication&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=sb_app_starter/src\/main\/java&amp;lt;com.pp.springboot.sb_app_starter{SbAppStarterApplication.java[SbAppStarterApplication&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=sb_cruddemo/src\/main\/java&amp;lt;pp.springboot{SbCruddemoApplication.java[SbCruddemoApplication&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=sb_rest_jpa_01/src\/main\/java&amp;lt;pp.springboot{SbRestJpa01Application.java[SbRestJpa01Application&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=sb_rest_jpa_advance/src\/main\/java&amp;lt;pp.springboot{SbRestJpaAdvanceApplication.java[SbRestJpaAdvanceApplication&lt;/infoNode&gt;&#x0D;&#x0A;&lt;/historyRootNode&gt;&#x0D;&#x0A;&lt;/History&gt;" key="History"/>
+		<section name="DialogBoundsSettings">
+			<item value="600" key="DIALOG_WIDTH"/>
+			<item value="1|Segoe UI|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+			<item value="500" key="DIALOG_HEIGHT"/>
+			<item value="671" key="DIALOG_X_ORIGIN"/>
+			<item value="188" key="DIALOG_Y_ORIGIN"/>
+		</section>
+	</section>
+</section>

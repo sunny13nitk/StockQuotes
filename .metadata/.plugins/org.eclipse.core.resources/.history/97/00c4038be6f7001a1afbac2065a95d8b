@@ -1,0 +1,13 @@
+package pp.springboot.repo;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import pp.springboot.entity.Student;
+
+public interface StudentRepo extends JpaRepository<Student, Integer>
+{
+	// find by last name
+	public List<Student> findBylastName(String lname);
+}

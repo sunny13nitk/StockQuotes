@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RepSrv_XLSSrv_MapList>
+	<srvMappings>
+		<repSrvName>SA_ScripPriceProjectionService</repSrvName>
+		<XLSSrvName>PriceForecastXlSSrv</XLSSrvName>
+	</srvMappings>
+	<srvMappings>
+		<repSrvName>ScripAnalysisSrv</repSrvName>
+		<XLSSrvName>ScripAnalysisXLSSrv</XLSSrvName>
+	</srvMappings>
+</RepSrv_XLSSrv_MapList>

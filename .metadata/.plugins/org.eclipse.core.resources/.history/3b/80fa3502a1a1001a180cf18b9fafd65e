@@ -1,0 +1,83 @@
+package root.busslogic.aspects;
+
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import root.busslogic.Services.interfaces.IFundLineSrv;
+import root.busslogic.annotations.FundLineBalance;
+import root.busslogic.utilities.UtilAnnotation;
+
+@Aspect
+@Component
+public class FundLineBalanceAspect
+{
+	
+	@Autowired
+	private IFundLineSrv fundLineSrv;;
+	
+	/*
+	 * ADVICE- Around Advice on FundLine Balance Annotation Marked Methods -- that would influence the Balance in the
+	 * specific Fund Line - Around coz in Pre- need to check for -ve balances and be ready with updated balance as per
+	 * txn. type - in Post - update fund line balance after successful execution using Fund Line Service
+	 */
+	@Around(
+	    "onFundLineBalanceAnnotation()"
+	)
+	public void updateFundLineBalance(
+	        ProceedingJoinPoint pjp
+	) throws Throwable
+	{
+		// Get the Annotation Origin
+		FundLineBalance flbAnn = (FundLineBalance) UtilAnnotation.getAnnotationforObjbyAnnType(pjp,
+		        FundLineBalance.class);
+		if (flbAnn != null)
+		{
+			switch (flbAnn.origin())
+			{
+				case FundLine:
+					{
+						triggerfromFundLine(pjp);
+					}
+			}
+			
+		}
+		
+		// Based on Annotation Origin Scan for expected PJP Args & take Action
+	}
+	
+	/*
+	 * POINTCUt Expressions
+	 */
+	@Pointcut(
+	    "@Annotation(root.busslogic.annotations.FundLineBalance)"
+	)
+	public void onFundLineBalanceAnnotation(
+	)
+	{
+		
+	}
+	
+	/*
+	 * PRIVATE METHODS IN ASPECT
+	 */
+	private void triggerfromFundLine(
+	        ProceedingJoinPoint pjp
+	)
+	{
+		
+		// Get the Fund Line Id and Fund Line Item from PJP args
+		
+		// Check for Balance due to transaction and -ve balance safety
+		// Triggre Exception if needed
+		
+		// Compute the Balance as a result of fund line Item
+		
+		// proceed the Join Point
+		
+	}
+	
+}

@@ -1,0 +1,5 @@
+package root.config;
+
+public class DemoAppConfig {
+
+}

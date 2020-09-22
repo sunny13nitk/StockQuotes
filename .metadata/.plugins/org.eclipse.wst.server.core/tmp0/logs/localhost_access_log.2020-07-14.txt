@@ -1,0 +1,15 @@
+127.0.0.1 - - [14/Jul/2020:12:14:44 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [14/Jul/2020:12:14:45 +0530] "GET /spring-security-customlogin/ HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [14/Jul/2020:12:14:47 +0530] "GET /spring-security-customlogin/myLoginPage HTTP/1.1" 200 2671
+0:0:0:0:0:0:0:1 - - [14/Jul/2020:12:14:48 +0530] "GET /favicon.ico HTTP/1.1" 404 762
+0:0:0:0:0:0:0:1 - - [14/Jul/2020:12:14:55 +0530] "POST /spring-security-customlogin/authenticateUser HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [14/Jul/2020:12:14:55 +0530] "POST /spring-security-customlogin/authenticateUser HTTP/1.1" 405 746
+0:0:0:0:0:0:0:1 - - [14/Jul/2020:12:14:56 +0530] "GET /spring-security-customlogin/ HTTP/1.1" 200 956
+0:0:0:0:0:0:0:1 - - [14/Jul/2020:12:14:58 +0530] "GET /spring-security-customlogin/myLoginPage HTTP/1.1" 200 2671
+0:0:0:0:0:0:0:1 - - [14/Jul/2020:12:15:01 +0530] "POST /spring-security-customlogin/authenticateUser HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [14/Jul/2020:12:15:01 +0530] "GET /spring-security-customlogin/ HTTP/1.1" 200 956
+0:0:0:0:0:0:0:1 - - [14/Jul/2020:12:15:03 +0530] "GET /spring-security-customlogin/pf/main HTTP/1.1" 200 4418
+0:0:0:0:0:0:0:1 - - [14/Jul/2020:12:15:09 +0530] "GET /spring-security-customlogin/pf/PFdetailsShow?pid=3 HTTP/1.1" 200 17715
+0:0:0:0:0:0:0:1 - - [14/Jul/2020:12:15:13 +0530] "GET /spring-security-customlogin/pf/listHoldings?pid=3 HTTP/1.1" 200 28848
+0:0:0:0:0:0:0:1 - - [14/Jul/2020:12:15:16 +0530] "GET /spring-security-customlogin/pf/PFposDonut?pid=3 HTTP/1.1" 200 14129
+0:0:0:0:0:0:0:1 - - [14/Jul/2020:12:16:56 +0530] "GET /spring-security-customlogin/pf/PFdetailsShow?pid=3 HTTP/1.1" 200 17715

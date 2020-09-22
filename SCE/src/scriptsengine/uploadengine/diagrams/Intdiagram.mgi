@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassDiagram>
+    <CommunicationClass
+        name="scriptsengine.uploadengine.managers.ScripDataManager"
+        x="436" y="51"/>
+    <CommunicationClass
+        name="scriptsengine.uploadengine.validations.implementations.UpdateScripWBValidationService"
+        x="1072" y="325">
+        <Association
+            destinationClassName="scriptsengine.uploadengine.services.implementations.ScripSheetMetadataService"
+            endpointName="scMdtSrv" kind="Simple"/>
+        <Association
+            destinationClassName="scriptsengine.uploadengine.validations.implementations.ScripExistsService"
+            endpointName="scExsSrv" kind="Simple"/>
+        <Communication destinationClassName="scriptsengine.uploadengine.validations.implementations.ScripExistsService"/>
+        <Communication destinationClassName="scriptsengine.uploadengine.services.implementations.ScripSheetMetadataService"/>
+    </CommunicationClass>
+    <CommunicationClass
+        name="scriptsengine.uploadengine.services.implementations.ScripCreateService"
+        x="155" y="217"/>
+    <CommunicationClass
+        name="scriptsengine.uploadengine.services.implementations.PricesSheetEntityParser"
+        x="1091" y="666"/>
+    <CommunicationClass
+        name="scriptsengine.uploadengine.services.implementations.ScripBaseService"
+        x="444" y="321">
+        <Association
+            destinationClassName="scriptsengine.uploadengine.services.implementations.WBFilepathService"
+            endpointName="wbfpSrv" kind="Simple"/>
+        <Association
+            destinationClassName="scriptsengine.uploadengine.validations.implementations.FilepathValidationService"
+            endpointName="fpValidationSrv" kind="Simple"/>
+        <Communication destinationClassName="scriptsengine.uploadengine.services.implementations.WBFilepathService"/>
+        <Communication destinationClassName="scriptsengine.uploadengine.validations.implementations.FilepathValidationService"/>
+    </CommunicationClass>
+    <CommunicationClass
+        name="scriptsengine.uploadengine.services.implementations.ScripDataService"
+        x="440" y="135"/>
+    <CommunicationClass
+        name="scriptsengine.uploadengine.validations.implementations.ScripExistsService"
+        x="247" y="578">
+        <Association
+            destinationClassName="scriptsengine.uploadengine.services.implementations.ScripSheetMetadataService"
+            endpointName="scMdtSrv" kind="Simple"/>
+        <Communication destinationClassName="scriptsengine.uploadengine.services.implementations.ScripSheetMetadataService"/>
+    </CommunicationClass>
+    <CommunicationClass
+        name="scriptsengine.uploadengine.validations.implementations.CreateScripWBValidationService"
+        x="451" y="452">
+        <Association
+            destinationClassName="scriptsengine.uploadengine.services.implementations.ScripSheetMetadataService"
+            endpointName="scMdtSrv" kind="Simple"/>
+        <Association
+            destinationClassName="scriptsengine.uploadengine.validations.implementations.ScripExistsService"
+            endpointName="scExsSrv" kind="Simple"/>
+        <Communication destinationClassName="scriptsengine.uploadengine.validations.implementations.ScripExistsService"/>
+        <Communication destinationClassName="scriptsengine.uploadengine.services.implementations.ScripSheetMetadataService"/>
+    </CommunicationClass>
+    <CommunicationClass
+        name="scriptsengine.uploadengine.services.implementations.WBFilepathService"
+        x="161" y="386"/>
+    <CommunicationClass
+        name="scriptsengine.uploadengine.validations.implementations.FilepathValidationService"
+        x="154" y="320"/>
+    <CommunicationClass
+        name="scriptsengine.uploadengine.services.implementations.ScripSheetMetadataService"
+        x="884" y="568">
+        <Association
+            destinationClassName="scriptsengine.uploadengine.services.implementations.ScripDataService"
+            endpointName="scDataSrv" kind="Simple"/>
+        <Communication destinationClassName="scriptsengine.uploadengine.services.implementations.ScripDataService"/>
+    </CommunicationClass>
+    <CommunicationClass
+        name="scriptsengine.uploadengine.validations.implementations.ScripXSheetValidationService"
+        x="480" y="658"/>
+    <CommunicationClass
+        name="scriptsengine.uploadengine.services.implementations.ScripUpdateService"
+        x="925" y="221">
+        <Association
+            destinationClassName="scriptsengine.uploadengine.validations.implementations.ScripExistsService"
+            endpointName="scExSrv" kind="Simple"/>
+        <Association
+            destinationClassName="scriptsengine.uploadengine.services.implementations.ScripSheetMetadataService"
+            endpointName="scMdtSrv" kind="Simple"/>
+        <Communication destinationClassName="scriptsengine.uploadengine.validations.implementations.ScripExistsService"/>
+        <Communication destinationClassName="scriptsengine.uploadengine.validations.implementations.FilepathValidationService"/>
+        <Communication destinationClassName="scriptsengine.uploadengine.services.implementations.ScripSheetMetadataService"/>
+    </CommunicationClass>
+    <CommunicationClass
+        name="scriptsengine.uploadengine.services.implementations.DBQueryFilterService"
+        x="1125" y="182">
+        <Association
+            destinationClassName="scriptsengine.uploadengine.services.implementations.ScripSheetMetadataService"
+            endpointName="scMdtSrv" kind="Simple"/>
+        <Communication destinationClassName="scriptsengine.uploadengine.services.implementations.ScripSheetMetadataService"/>
+    </CommunicationClass>
+</ClassDiagram>

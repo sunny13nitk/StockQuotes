@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:element name="FieldsMetadata" type="fieldsMetadata" />
+
+	<xs:element name="SheetMetadata" type="sheetMetadata" />
+
+	<xs:element name="WorkbookMetadata" type="workbookMetadata" />
+
+	<xs:complexType name="workbookMetadata">
+		<xs:sequence>
+			<xs:element name="sheetsMetadata" type="sheetMetadata" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="sheetMetadata">
+		<xs:sequence>
+			<xs:element name="sheetName" type="xs:string" minOccurs="0" />
+			<xs:element name="bobjName" type="xs:string" minOccurs="0" />
+			<xs:element name="requiredCreate" type="xs:boolean" minOccurs="0" />
+			<xs:element name="basesheet" type="xs:boolean" minOccurs="0" />
+			<xs:element name="collection" type="xs:boolean" minOccurs="0" />
+			<xs:element name="propDesc" type="xs:string" minOccurs="0" />
+			<xs:element name="entParserBeanName" type="xs:string" minOccurs="0" />
+			<xs:element name="fieldsDetails" type="fieldsMetadata" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="fieldsMetadata">
+		<xs:sequence>
+			<xs:element name="sheetField" type="xs:string" minOccurs="0" />
+			<xs:element name="key" type="xs:boolean" minOccurs="0" />
+			<xs:element name="mandatory" type="xs:boolean" minOccurs="0" />
+			<xs:element name="precision_ON" type="xs:boolean" minOccurs="0" />
+			<xs:element name="nonZero" type="xs:boolean" minOccurs="0" />
+			<xs:element name="objField" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
+

@@ -1,0 +1,10 @@
+package pp.springboot.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import pp.springboot.entity.Customer;
+
+public interface CustomerRepository extends JpaRepository<Customer, id>
+{
+	
+}

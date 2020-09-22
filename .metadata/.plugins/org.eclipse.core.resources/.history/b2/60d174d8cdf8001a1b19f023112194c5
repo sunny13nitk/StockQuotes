@@ -1,0 +1,46 @@
+package pp.springboot.rest;
+
+import javax.persistence.EntityManager;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import pp.springboot.entity.Student;
+import pp.springboot.entity.Student_Family;
+
+@RestController
+@RequestMapping("/students")
+public class StudentRestController
+{
+	@Autowired
+	private EntityManager entMgr;
+	
+	@PutMapping("/{studentId}/familyInfo/{pdId}")
+	public String updateStudentFamilyInfo(
+	        @PathVariable int studentId, @PathVariable int pdId
+	)
+	{
+		if (entMgr != null)
+		{
+			if (pdId > 0)
+			{
+				Student_Family familyInfoDb = entMgr.find(Student_Family.class, pdId);
+				if (familyInfoDb != null)
+				{
+					Student student = entMgr.find(Student.class, studentId);
+					if (student != null)
+					{
+						student.setFamilyInfo(familyInfoDb);
+						entMgr.merge(student);
+					}
+				}
+			}
+		}
+		
+		return null;
+	}
+	
+}

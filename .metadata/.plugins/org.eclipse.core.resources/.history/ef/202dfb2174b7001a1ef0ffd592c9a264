@@ -1,0 +1,6 @@
+package root.springdemo.rest;
+
+public class StudentsController
+{
+	
+}

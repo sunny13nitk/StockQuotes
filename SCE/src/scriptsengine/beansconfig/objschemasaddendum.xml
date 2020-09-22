@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ObjectSchemas>
+	<!-- Scrip Object -->
+	<ObjectSchema>
+		<RootObjectMetadata>
+			<Objectname>OB_Scrip_General</Objectname>
+			<Tablename>TB_Scrip_General</Tablename>
+			<Autokey>false</Autokey>
+			<KeyObjField>scCode</KeyObjField>
+		</RootObjectMetadata>
+		<Relations>
+			<Depobjname>OB_Scrip_BalSheet</Depobjname>
+			<Rootobjname>OB_Scrip_General</Rootobjname>
+			<Relationname>OB_Scrip_BalSheet_Rel</Relationname>
+			<Tablename>TB_Scrip_BalSheet</Tablename>
+			<Hierarchy>1</Hierarchy>
+			<Foreignkeyname>scCode</Foreignkeyname>
+			<Autokey>true</Autokey>
+			<KeyTableField>BalSheet_ID</KeyTableField>
+		</Relations>
+		<Relations>
+			<Depobjname>OB_Scrip_Shareholding</Depobjname>
+			<Rootobjname>OB_Scrip_General</Rootobjname>
+			<Relationname>OB_Scrip_Shareholding_Rel</Relationname>
+			<Tablename>TB_Scrip_Shareholding</Tablename>
+			<Hierarchy>1</Hierarchy>
+			<Foreignkeyname>scCode</Foreignkeyname>
+			<Autokey>true</Autokey>
+			<KeyTableField>SHP_ID</KeyTableField>
+		</Relations>
+		<Relations>
+			<Depobjname>OB_Scrip_QuartersData</Depobjname>
+			<Rootobjname>OB_Scrip_General</Rootobjname>
+			<Relationname>OB_Scrip_QuartersData_Rel</Relationname>
+			<Tablename>TB_Scrip_QuartersData</Tablename>
+			<Hierarchy>1</Hierarchy>
+			<Foreignkeyname>scCode</Foreignkeyname>
+			<Autokey>true</Autokey>
+			<KeyTableField>QT_ID</KeyTableField>
+		</Relations>
+		<Relations>
+			<Depobjname>OB_Scrip_Ratios</Depobjname>
+			<Rootobjname>OB_Scrip_General</Rootobjname>
+			<Relationname>OB_Scrip_Ratios_Rel</Relationname>
+			<Tablename>TB_Scrip_Ratios</Tablename>
+			<Hierarchy>1</Hierarchy>
+			<Foreignkeyname>scCode</Foreignkeyname>
+			<Autokey>true</Autokey>
+			<KeyTableField>RATIO_ID</KeyTableField>
+		</Relations>
+
+		<Relations>
+			<Depobjname>OB_Scrip_Expenses</Depobjname>
+			<Rootobjname>OB_Scrip_General</Rootobjname>
+			<Relationname>OB_Scrip_Expenses_Rel</Relationname>
+			<Tablename>TB_Scrip_Expenses</Tablename>
+			<Hierarchy>1</Hierarchy>
+			<Foreignkeyname>scCode</Foreignkeyname>
+			<Autokey>true</Autokey>
+			<KeyTableField>EXP_ID</KeyTableField>
+		</Relations>
+
+		<Relations>
+			<Depobjname>OB_Scrip_RawMaterial</Depobjname>
+			<Rootobjname>OB_Scrip_General</Rootobjname>
+			<Relationname>OB_Scrip_RawMaterial_Rel</Relationname>
+			<Tablename>TB_Scrip_RawMaterial</Tablename>
+			<Hierarchy>1</Hierarchy>
+			<Foreignkeyname>scCode</Foreignkeyname>
+			<Autokey>true</Autokey>
+			<KeyTableField>RM_ID</KeyTableField>
+		</Relations>
+
+
+		<Relations>
+			<Depobjname>OB_Scrip_FinishedProduct</Depobjname>
+			<Rootobjname>OB_Scrip_General</Rootobjname>
+			<Relationname>OB_Scrip_FinishedProduct_Rel</Relationname>
+			<Tablename>TB_Scrip_FinishedProduct</Tablename>
+			<Hierarchy>1</Hierarchy>
+			<Foreignkeyname>scCode</Foreignkeyname>
+			<Autokey>true</Autokey>
+			<KeyTableField>FP_ID</KeyTableField>
+		</Relations>
+	</ObjectSchema>
+
+	<ObjectSchema>
+		<RootObjectMetadata>
+			<Objectname>OB_Scrip_Sector</Objectname>
+			<Tablename>TB_Scrip_Sector</Tablename>
+			<Autokey>false</Autokey>
+			<KeyObjField>Sector</KeyObjField>
+		</RootObjectMetadata>
+	</ObjectSchema>
+
+
+	<!-- Positions Header and Items -->
+	<ObjectSchema>
+		<RootObjectMetadata>
+			<Objectname>OB_Positions_Header</Objectname>
+			<Tablename>TB_Positions_Header</Tablename>
+			<Autokey>true</Autokey>
+			<KeyTableField>PosID</KeyTableField>
+		</RootObjectMetadata>
+		<Relations>
+			<Depobjname>OB_Positions_Item</Depobjname>
+			<Rootobjname>OB_Positions_Header</Rootobjname>
+			<Relationname>OB_Positions_Items_Rel</Relationname>
+			<Tablename>TB_Positions_Item</Tablename>
+			<Hierarchy>1</Hierarchy>
+			<Foreignkeyname>PosID</Foreignkeyname>
+			<Autokey>true</Autokey>
+			<KeyTableField>PosItemNo</KeyTableField>
+		</Relations>
+		<Relations>
+			<Depobjname>OB_Dividend_Item</Depobjname>
+			<Rootobjname>OB_Positions_Header</Rootobjname>
+			<Relationname>OB_Positions_Dividend_Rel</Relationname>
+			<Tablename>TB_Dividend_Item</Tablename>
+			<Hierarchy>1</Hierarchy>
+			<Foreignkeyname>PosID</Foreignkeyname>
+			<Autokey>true</Autokey>
+			<KeyTableField>DivItemNo</KeyTableField>
+		</Relations>
+	</ObjectSchema>
+
+	<!-- Taxation Header and Items -->
+	<ObjectSchema>
+		<RootObjectMetadata>
+			<Objectname>OB_TaxH</Objectname>
+			<Tablename>TB_TaxH</Tablename>
+			<Autokey>false</Autokey>
+			<KeyObjField>FYAsmYear</KeyObjField>
+		</RootObjectMetadata>
+		<Relations>
+			<Depobjname>OB_TaxI</Depobjname>
+			<Rootobjname>OB_TaxH</Rootobjname>
+			<Relationname>OB_TaxI_Rel</Relationname>
+			<Tablename>TB_TaxI</Tablename>
+			<Hierarchy>1</Hierarchy>
+			<Foreignkeyname>FYAsmYear</Foreignkeyname>
+			<Autokey>true</Autokey>
+			<KeyTableField>TaxItemNo</KeyTableField>
+		</Relations>
+	</ObjectSchema>
+
+
+</ObjectSchemas>

@@ -1,0 +1,56 @@
+package pp.springboot.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import pp.springboot.dao.intf.ICustomerDAO;
+import pp.springboot.entity.Customer;
+import pp.springboot.service.intf.ICustomerSrv;
+
+@Service
+public class CustomerSrv implements ICustomerSrv
+{
+	@Autowired
+	@Qualifier(
+	        value = "customerDAOJPAImpl"
+	)
+	private ICustomerDAO custDAO;
+	
+	@Transactional
+	public List<Customer> findAll(
+	)
+	{
+		return custDAO.findAll();
+	}
+	
+	@Transactional
+	public Customer findbyId(
+	        int id
+	)
+	{
+		return custDAO.findbyId(id);
+	}
+	
+	@Transactional
+	public void save(
+	        Customer newCustomer
+	)
+	{
+		custDAO.save(newCustomer);
+		
+	}
+	
+	@Transactional
+	public void deleteById(
+	        int id
+	)
+	{
+		custDAO.deleteById(id);
+		
+	}
+	
+}

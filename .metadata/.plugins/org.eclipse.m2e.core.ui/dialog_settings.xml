@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+		<list key="ciManagementUrl">
+		</list>
+		<list key="ciManagementSystem">
+		</list>
+		<list key="issueManagementSystem">
+		</list>
+		<list key="issueManagementUrl">
+		</list>
+	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="C:\Back Up Labs\Sunny\Workspaces\STS-WS2\bonus-code-spring-security-user-registration-custom-user-details-thymeleaf-spring-boot"/>
+			<item value="C:\Users\I057386\Downloads\bonus-thymeleafdemo-employees-security-with-jdbc-authentication"/>
+			<item value="C:\Back Up Labs\Sunny\Workspaces\STS-WS2\sb_app_starter"/>
+			<item value="C:\Users\I057386\Downloads\sb_app_starter"/>
+			<item value="C:\Back Up Labs\Sunny\Workspaces\STS-WS2\spring-crm-rest-demo"/>
+			<item value="C:\Back Up Labs\Sunny\Workspaces\STS-WS2\crm-web-app-rest-client-demo"/>
+			<item value="C:\Users\I057386\Desktop\spring-security-demo"/>
+			<item value="C:\Users\I057386\Downloads\solution-code-spring-security-demo-02-basic-security"/>
+			<item value="C:\Back Up Labs\Sunny\Workspaces\STS-WS2\spring-security-app01"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArchetypePage">
+		<item value="All Catalogs" key="catalog"/>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+			<item value="C:\Back Up Labs\Sunny\Workspaces\STS-WS2\springs-demo1"/>
+			<item value="C:\Back Up Labs\Sunny\Workspaces\STS-WS2\CRM_AOP_USR_LOG"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="package">
+			<item value="org.hwg.maven_allconfig_mvc_qs"/>
+			<item value="org.hwg.springs_maven_alljavaconfig_mvc"/>
+			<item value="org.hwg.spring_mvc_allconfig_maven"/>
+		</list>
+		<list key="groupId">
+			<item value="org.hwg"/>
+		</list>
+		<list key="artifactId">
+			<item value="maven-allconfig-mvc-qs"/>
+			<item value="springs-maven-alljavaconfig-mvc"/>
+			<item value="spring-mvc-allconfig-maven"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+</section>

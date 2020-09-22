@@ -1,0 +1,26 @@
+package root.springdemo.rest;
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import root.springdemo.entity.Student;
+
+@RestController
+@RequestMapping(
+    "/api"
+)
+public class StudentsController
+{
+	@GetMapping("/students")
+	public List<Student> getStudents(
+	)
+	{
+		List<Student> students = null;
+		
+		return students;
+	}
+	
+}

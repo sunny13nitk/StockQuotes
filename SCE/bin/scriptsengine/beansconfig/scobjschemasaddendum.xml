@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ObjectSchemas>
+	<!-- Scrip Object -->
+	<ObjectSchema>
+		<RootObjectMetadata>
+			<Objectname>EN_SC_General</Objectname>
+			<Tablename>TB_SC_General</Tablename>
+			<Autokey>false</Autokey>
+			<KeyObjField>SCCode</KeyObjField>
+		</RootObjectMetadata>
+		
+		<Relations>
+			<Depobjname>EN_SC_BalSheet</Depobjname>
+			<Rootobjname>EN_SC_General</Rootobjname>
+			<Relationname>EN_SC_BalSheet_Rel</Relationname>
+			<Tablename>TB_SC_BalSheet</Tablename>
+			<Hierarchy>1</Hierarchy>
+			<Foreignkeyname>SCCode</Foreignkeyname>
+			<Autokey>true</Autokey>
+			<KeyTableField>BalSheet_ID</KeyTableField>
+		</Relations>
+		
+		<Relations>
+			<Depobjname>EN_SC_Last4QData</Depobjname>
+			<Rootobjname>EN_SC_General</Rootobjname>
+			<Relationname>EN_SC_Last4QData_Rel</Relationname>
+			<Tablename>TB_SC_Last4QData</Tablename>
+			<Hierarchy>1</Hierarchy>
+			<Foreignkeyname>SCCode</Foreignkeyname>
+			<Autokey>true</Autokey>
+			<KeyTableField>TTM_ID</KeyTableField>
+		</Relations>
+		
+		<Relations>
+			<Depobjname>EN_SC_Trends</Depobjname>
+			<Rootobjname>EN_SC_General</Rootobjname>
+			<Relationname>EN_SC_Trends_Rel</Relationname>
+			<Tablename>TB_SC_Trends</Tablename>
+			<Hierarchy>1</Hierarchy>
+			<Foreignkeyname>SCCode</Foreignkeyname>
+			<Autokey>true</Autokey>
+			<KeyTableField>Trend_ID</KeyTableField>
+		</Relations>
+		
+		<Relations>
+			<Depobjname>EN_SC_10YData</Depobjname>
+			<Rootobjname>EN_SC_General</Rootobjname>
+			<Relationname>EN_SC_10YData_Rel</Relationname>
+			<Tablename>TB_SC_10YData</Tablename>
+			<Hierarchy>1</Hierarchy>
+			<Foreignkeyname>SCCode</Foreignkeyname>
+			<Autokey>true</Autokey>
+			<KeyTableField>ID_10YData</KeyTableField>
+		</Relations>
+		
+		<Relations>
+			<Depobjname>EN_SC_Quarters</Depobjname>
+			<Rootobjname>EN_SC_General</Rootobjname>
+			<Relationname>EN_SC_Quarters_Rel</Relationname>
+			<Tablename>TB_SC_Quarters</Tablename>
+			<Hierarchy>1</Hierarchy>
+			<Foreignkeyname>SCCode</Foreignkeyname>
+			<Autokey>true</Autokey>
+			<KeyTableField>QTR_ID</KeyTableField>
+		</Relations>
+		
+
+	</ObjectSchema>
+
+	
+
+	<!-- Positions Header and Items -->
+	<ObjectSchema>
+		<RootObjectMetadata>
+			<Objectname>OB_Positions_Header</Objectname>
+			<Tablename>TB_Positions_Header</Tablename>
+			<Autokey>true</Autokey>
+			<KeyTableField>PosID</KeyTableField>
+		</RootObjectMetadata>
+		<Relations>
+			<Depobjname>OB_Positions_Item</Depobjname>
+			<Rootobjname>OB_Positions_Header</Rootobjname>
+			<Relationname>OB_Positions_Items_Rel</Relationname>
+			<Tablename>TB_Positions_Item</Tablename>
+			<Hierarchy>1</Hierarchy>
+			<Foreignkeyname>PosID</Foreignkeyname>
+			<Autokey>true</Autokey>
+			<KeyTableField>PosItemNo</KeyTableField>
+		</Relations>
+		<Relations>
+			<Depobjname>OB_Dividend_Item</Depobjname>
+			<Rootobjname>OB_Positions_Header</Rootobjname>
+			<Relationname>OB_Positions_Dividend_Rel</Relationname>
+			<Tablename>TB_Dividend_Item</Tablename>
+			<Hierarchy>1</Hierarchy>
+			<Foreignkeyname>PosID</Foreignkeyname>
+			<Autokey>true</Autokey>
+			<KeyTableField>DivItemNo</KeyTableField>
+		</Relations>
+	</ObjectSchema>
+
+	<!-- Taxation Header and Items -->
+	<ObjectSchema>
+		<RootObjectMetadata>
+			<Objectname>OB_TaxH</Objectname>
+			<Tablename>TB_TaxH</Tablename>
+			<Autokey>false</Autokey>
+			<KeyObjField>FYAsmYear</KeyObjField>
+		</RootObjectMetadata>
+		<Relations>
+			<Depobjname>OB_TaxI</Depobjname>
+			<Rootobjname>OB_TaxH</Rootobjname>
+			<Relationname>OB_TaxI_Rel</Relationname>
+			<Tablename>TB_TaxI</Tablename>
+			<Hierarchy>1</Hierarchy>
+			<Foreignkeyname>FYAsmYear</Foreignkeyname>
+			<Autokey>true</Autokey>
+			<KeyTableField>TaxItemNo</KeyTableField>
+		</Relations>
+	</ObjectSchema>
+
+
+</ObjectSchemas>

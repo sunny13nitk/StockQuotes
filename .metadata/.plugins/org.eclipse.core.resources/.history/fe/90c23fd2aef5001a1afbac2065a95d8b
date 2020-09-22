@@ -1,0 +1,8 @@
+package pp.springboot.dao.intf;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ICustomerRep extends JpaRepository<T, ID>
+{
+	
+}

@@ -1,0 +1,10 @@
+info.desc=Cool APP
+info.version=1.0
+
+#Expose All Endints on WEb
+#Can also expose individual Endpoints seperated by Comma
+management.endpoints.web.exposure.include=*
+
+#Custom Properties
+coach.name=Sunny
+team.name=India

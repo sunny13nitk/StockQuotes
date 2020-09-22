@@ -1,0 +1,4 @@
+# -------- DB Properties -----------------
+spring.datasource.url=jdbc:sqlserver://localhost;databasename=PurplePebbles_Demo;integratedSecurity=true
+# Using above Spring boot will automatically create beans for Data Source and Entity Manager
+# which can be njected directly in DAO 

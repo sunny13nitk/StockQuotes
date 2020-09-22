@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="/ModelFramework"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Springs5"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/AspectJ"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Aspects"/>
+	<classpathentry kind="lib" path="C:/Back Up Labs/Sunny/Sunny Drives/Java Jars/Web/JDBC/sqljdbc42.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/ApachePOI-Excel"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

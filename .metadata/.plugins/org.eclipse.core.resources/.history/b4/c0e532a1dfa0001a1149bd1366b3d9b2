@@ -1,0 +1,115 @@
+package root.busslogic.DAO.impl;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import root.busslogic.DAO.interfaces.IPortfolioDAO;
+import root.busslogic.entity.Portfolio;
+import root.user.model.User;
+
+@Repository
+public class PortfolioDAO implements IPortfolioDAO
+{
+	@Autowired
+	private SessionFactory sFac;
+	
+	@Override
+	public List<Portfolio> getPortfoliosforUser(
+	        User user
+	)
+	{
+		List<Portfolio> pfList = null;
+		if (sFac != null && user != null)
+		{
+			Session sess = sFac.getCurrentSession();
+			if (sess != null)
+			{
+				Query<Portfolio> Qpf = sess.createQuery("from Portfolio where uid = :lv_uid", Portfolio.class);
+				if (Qpf != null)
+				{
+					Qpf.setParameter("lv_uid", user.getId());
+					pfList = Qpf.getResultList();
+				}
+			}
+		}
+		return pfList;
+	}
+	
+	@Override
+	public int deletePortfolio(
+	        int pfID
+	)
+	{
+		int retVaL = 0;
+		
+		if (sFac != null && pfID > 0)
+		{
+			Session sess = sFac.getCurrentSession();
+			if (sess != null)
+			{
+				Query<Portfolio> Qpf = sess.createQuery("delete from Portfolio where pid = :lv_pid");
+				if (Qpf != null)
+				{
+					Qpf.setParameter("lv_pid", pfID);
+					retVaL = Qpf.executeUpdate();
+				}
+			}
+		}
+		
+		return retVaL;
+	}
+	
+	@Override
+	public int updatePortfolio(
+	        Portfolio updPF
+	)
+	{
+		int retVaL = 0;
+		
+		return retVaL;
+		
+	}
+	
+	@Override
+	public void addPortfolioforUser(
+	        Portfolio newPF, User user
+	) throws Exception
+	{
+		if (sFac != null && user != null && newPF != null)
+		{
+			Session sess = sFac.getCurrentSession();
+			if (sess != null)
+			{
+				List<Portfolio> pfList = getPortfoliosforUser(user);
+				if (pfList != null)
+				{
+					// Check if the User does not has the PF with the same Name already
+					if (pfList.stream().anyMatch(x -> x.getName().equals(newPF.getName())))
+					{
+						throw new Exception("A Portfolio with the name - " + newPF.getName() + " alredy exists for "
+						        + user.getUserName() + "!");
+					} else
+					{
+						// Add with the Key
+						newPF.setUid(user.getId()); // Link the entities for Hibernate
+						sess.save(newPF);
+					}
+					
+				} else // No PF Exists Yet - Simply Create Bag and Add
+				{
+					// Add with the Key
+					newPF.setUid(user.getId()); // Link the entities for Hibernate
+					sess.save(newPF);
+				}
+				
+			}
+		}
+		
+	}
+	
+}

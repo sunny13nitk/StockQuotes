@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassDiagram>
+    <Class name="scriptsengine.uploadengine.managers.ScripDataManager"
+        x="101" y="17">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="scriptsengine.uploadengine.services.interfaces.IScripDataService"/>
+    </Class>
+    <Class
+        name="scriptsengine.uploadengine.validations.implementations.UpdateScripWBValidationService"
+        x="968" y="798">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="scriptsengine.uploadengine.validations.interfaces.IWBValidator"/>
+        <Association
+            destinationClassName="scriptsengine.uploadengine.services.implementations.ScripSheetMetadataService"
+            endpointName="scMdtSrv" kind="Simple"/>
+        <Association
+            destinationClassName="scriptsengine.uploadengine.validations.implementations.ScripExistsService"
+            endpointName="scExsSrv" kind="Simple"/>
+        <Communication destinationClassName="scriptsengine.uploadengine.validations.implementations.ScripExistsService"/>
+        <Communication destinationClassName="scriptsengine.uploadengine.services.implementations.ScripSheetMetadataService"/>
+    </Class>
+    <Class
+        name="scriptsengine.uploadengine.validations.interfaces.IFilepathValidator"
+        x="1034" y="156">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="scriptsengine.uploadengine.services.implementations.ScripBaseService"
+        x="384" y="285">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="scriptsengine.uploadengine.validations.interfaces.IWBValidator"
+            endpointName="wbUpdateValdSrv" kind="Simple"/>
+        <Association
+            destinationClassName="scriptsengine.uploadengine.services.implementations.WBFilepathService"
+            endpointName="wbfpSrv" kind="Simple"/>
+        <Association
+            destinationClassName="scriptsengine.uploadengine.validations.implementations.FilepathValidationService"
+            endpointName="fpValidationSrv" kind="Simple"/>
+        <Association
+            destinationClassName="scriptsengine.uploadengine.validations.interfaces.IWBValidator"
+            endpointName="wbCreateValdSrv" kind="Simple"/>
+        <Communication destinationClassName="scriptsengine.uploadengine.validations.interfaces.IWBValidator"/>
+        <Communication destinationClassName="scriptsengine.uploadengine.services.implementations.WBFilepathService"/>
+        <Communication destinationClassName="scriptsengine.uploadengine.validations.implementations.FilepathValidationService"/>
+    </Class>
+    <Class
+        name="scriptsengine.uploadengine.services.implementations.ScripDataService"
+        x="379" y="113">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="scriptsengine.uploadengine.services.interfaces.IScripDataService"/>
+        <Communication destinationClassName="scriptsengine.uploadengine.services.interfaces.IScripCreate"/>
+        <Communication destinationClassName="scriptsengine.uploadengine.services.interfaces.IScripUpdate"/>
+        <Communication destinationClassName="scriptsengine.uploadengine.JAXB.definitions.PathsJAXB"/>
+    </Class>
+    <Class
+        name="scriptsengine.uploadengine.validations.implementations.ScripExistsService"
+        x="752" y="287">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="scriptsengine.uploadengine.validations.interfaces.IScripExists"/>
+        <Association
+            destinationClassName="scriptsengine.uploadengine.services.implementations.ScripSheetMetadataService"
+            endpointName="scMdtSrv" kind="Simple"/>
+        <Communication destinationClassName="scriptsengine.uploadengine.services.implementations.ScripSheetMetadataService"/>
+    </Class>
+    <Class
+        name="scriptsengine.uploadengine.services.implementations.WBFilepathService"
+        x="322" y="445">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="scriptsengine.uploadengine.services.interfaces.IWBfromFilepath"/>
+    </Class>
+    <Class
+        name="scriptsengine.uploadengine.services.interfaces.IScripCreate"
+        x="7" y="656">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="scriptsengine.uploadengine.JAXB.definitions.PathsJAXB"
+        x="291" y="-8">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="scriptsengine.uploadengine.services.implementations.ScripUpdateService"
+        x="978" y="644">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="scriptsengine.uploadengine.services.interfaces.IScripUpdate"/>
+        <Association
+            destinationClassName="scriptsengine.uploadengine.validations.implementations.ScripExistsService"
+            endpointName="scExSrv" kind="Simple"/>
+        <Association
+            destinationClassName="scriptsengine.uploadengine.services.implementations.ScripSheetMetadataService"
+            endpointName="scMdtSrv" kind="Simple"/>
+        <Communication destinationClassName="scriptsengine.uploadengine.validations.interfaces.IWBValidator"/>
+        <Communication destinationClassName="scriptsengine.uploadengine.services.interfaces.IDBQueryFilter"/>
+        <Communication destinationClassName="scriptsengine.uploadengine.validations.implementations.ScripExistsService"/>
+        <Communication destinationClassName="scriptsengine.uploadengine.validations.implementations.FilepathValidationService"/>
+        <Communication destinationClassName="scriptsengine.uploadengine.services.implementations.ScripSheetMetadataService"/>
+    </Class>
+    <Class
+        name="scriptsengine.uploadengine.services.interfaces.IScripDataService"
+        x="-3" y="135">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="scriptsengine.uploadengine.services.interfaces.IScripSheetMetadata"
+        x="901" y="463">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="scriptsengine.uploadengine.validations.interfaces.IScripExists"
+        x="1036" y="290">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="scriptsengine.uploadengine.services.interfaces.ISheetEntityParser"
+        x="354" y="1162">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="scriptsengine.uploadengine.services.implementations.SheetEntityParserService"
+        x="547" y="1131">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="scriptsengine.uploadengine.services.interfaces.ISheetEntityParser"/>
+        <Association
+            destinationClassName="scriptsengine.uploadengine.services.implementations.ScripSheetMetadataService"
+            endpointName="scMdtSrv" kind="Simple"/>
+        <Communication destinationClassName="scriptsengine.uploadengine.services.implementations.ScripSheetMetadataService"/>
+    </Class>
+    <Class
+        name="scriptsengine.uploadengine.services.implementations.ScripCreateService"
+        x="168" y="652">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="true" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="scriptsengine.uploadengine.services.interfaces.IScripCreate"/>
+        <Communication destinationClassName="scriptsengine.uploadengine.validations.interfaces.IWBValidator"/>
+        <Communication destinationClassName="scriptsengine.uploadengine.services.interfaces.IScripSheetMetadata"/>
+    </Class>
+    <Class
+        name="scriptsengine.uploadengine.validations.interfaces.IWBValidator"
+        x="547" y="881">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="scriptsengine.uploadengine.validations.interfaces.IXSheetValidator"
+        x="-40" y="521">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="scriptsengine.uploadengine.services.interfaces.IDBQueryFilter"
+        x="831" y="1106">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="scriptsengine.uploadengine.validations.implementations.CreateScripWBValidationService"
+        x="94" y="839">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="scriptsengine.uploadengine.validations.interfaces.IWBValidator"/>
+        <Association
+            destinationClassName="scriptsengine.uploadengine.services.implementations.ScripSheetMetadataService"
+            endpointName="scMdtSrv" kind="Simple"/>
+        <Association
+            destinationClassName="scriptsengine.uploadengine.validations.implementations.ScripExistsService"
+            endpointName="scExsSrv" kind="Simple"/>
+        <Communication destinationClassName="scriptsengine.uploadengine.validations.implementations.ScripExistsService"/>
+        <Communication destinationClassName="scriptsengine.uploadengine.services.implementations.ScripSheetMetadataService"/>
+    </Class>
+    <Class
+        name="scriptsengine.uploadengine.validations.implementations.FilepathValidationService"
+        x="788" y="158">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="scriptsengine.uploadengine.validations.interfaces.IFilepathValidator"/>
+    </Class>
+    <Class
+        name="scriptsengine.uploadengine.services.implementations.ScripSheetMetadataService"
+        x="604" y="429">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="scriptsengine.uploadengine.services.interfaces.IScripSheetMetadata"/>
+        <Association
+            destinationClassName="scriptsengine.uploadengine.services.implementations.ScripDataService"
+            endpointName="scDataSrv" kind="Simple"/>
+        <Communication destinationClassName="scriptsengine.uploadengine.services.implementations.ScripDataService"/>
+    </Class>
+    <Class
+        name="scriptsengine.uploadengine.validations.implementations.ScripXSheetValidationService"
+        x="256" y="501">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="scriptsengine.uploadengine.validations.interfaces.IXSheetValidator"/>
+    </Class>
+    <Class
+        name="scriptsengine.uploadengine.services.interfaces.IScripBase"
+        x="153" y="338">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="scriptsengine.uploadengine.services.interfaces.IWBfromFilepath"
+        x="123" y="434">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class
+        name="scriptsengine.uploadengine.services.implementations.DBQueryFilterService"
+        x="976" y="1022">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="scriptsengine.uploadengine.services.interfaces.IDBQueryFilter"/>
+        <Association
+            destinationClassName="scriptsengine.uploadengine.services.implementations.ScripSheetMetadataService"
+            endpointName="scMdtSrv" kind="Simple"/>
+        <Communication destinationClassName="scriptsengine.uploadengine.services.implementations.ScripSheetMetadataService"/>
+    </Class>
+    <Class
+        name="scriptsengine.uploadengine.services.interfaces.IScripUpdate"
+        x="808" y="662">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+</ClassDiagram>

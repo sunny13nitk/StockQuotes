@@ -1,0 +1,415 @@
+package root.scripsEngine.uploadEngine.scripSheetServices.implementations;
+
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Service;
+
+import root.scripsEngine.uploadEngine.Metadata.services.implementations.SCWBMetadataSrv;
+import root.scripsEngine.uploadEngine.entities.EN_SC_General;
+import root.scripsEngine.uploadEngine.exceptions.EX_General;
+import root.scripsEngine.uploadEngine.scripSheetServices.interfaces.IXLS_Scrip_Create_Srv;
+import root.scripsEngine.uploadEngine.tools.definitions.TY_WBRawData;
+import root.scripsEngine.uploadEngine.tools.interfaces.IWBRawDataSrv;
+
+
+
+@Service("XLS_Scrip_Create_Srv")
+@Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+public class XLS_Scrip_Create_Srv implements IXLS_Scrip_Create_Srv
+{
+
+	/*
+	 * -------------- AUTOWIRED MEMEBERS ----------------------
+	 */
+
+	
+
+	@Autowired
+	private IWBRawDataSrv		wbRawDataSrv;
+
+	@Autowired
+	private SCWBMetadataSrv		wbMdtSrv;
+
+
+
+	/*
+	 * -------------- PRIVATE MEMBERS ----------------------
+	 */
+
+	private TY_WBRawData		wbRawData;
+
+	private EN_SC_General		scRoot;
+
+	/*
+	 * Interface Implementation
+	 */
+	@Override
+	public boolean Create_Scrip_WbContext(XSSFWorkbook wbCtxt) throws EX_General
+	{
+		boolean created = false;
+
+		if (wbCtxt != null)
+		{
+
+			try
+			{
+
+				// 1. Get the RawData
+				getWbRawData(wbCtxt);
+
+				// 2. Create Root Entity
+				createRootEntity();
+
+				// 3. Create Related Entities
+				createRelatedEntities();
+
+				// 4. Finally Save the Root Entity
+				scRoot.Save();
+
+				// All Executed W/o any Exception
+				created = true;
+			}
+
+			catch (Exception e)
+			{
+				if (scRoot == null)
+
+				{
+					EX_General egen = new EX_General("ERRCRSCROOT", new Object[]
+					{ null, e.getMessage()
+					});
+					msgFormatter.generate_message_snippet(egen);
+					throw egen;
+				}
+				else
+				{
+					EX_General egen = new EX_General("ERRCRSCROOT", new Object[]
+					{ " ", e.getMessage()
+					});
+					msgFormatter.generate_message_snippet(egen);
+					throw egen;
+
+				}
+			}
+		}
+		return created;
+	}
+
+	/*
+	 * ------------------------ PRIVATE METHODS -----------------------------
+	 */
+
+	private void getWbRawData(XSSFWorkbook wbCtxt) throws EX_General
+	{
+		if (wbRawDataSrv != null)
+		{
+
+			this.wbRawData = wbRawDataSrv.getSheetFldVals(wbCtxt);
+
+		}
+	}
+
+	private void createRootEntity() throws EX_General, IllegalAccessException, IllegalArgumentException, InvocationTargetException
+	{
+
+		if (wbMdtSrv != null && this.wbRawData != null && frameworkManager != null)
+		{
+
+			// 1. Create POJO for Root
+			EN_SC_General scGenObj = new EN_SC_General();
+			TY_SingleCard_SheetRawData rootSheetRawData = null;
+			Object_Info rootobjinfo = FrameworkManager.getObjectsInfoFactory().Get_ObjectInfo_byClass(scGenObj.getClass());
+
+			// 2. Get Root Metadata
+
+			SCSheetMetadata rootMdt = wbMdtSrv.getMetadataforBaseSheet();
+			if (rootMdt != null)
+			{
+				// --- 3. Set POJO properties from Sheet Raw Data -----------
+
+				// 3.a Get Base Sheet Raw Data
+				rootSheetRawData = wbRawData.getNonCollSheetsRawData().stream().filter(x -> x.getSheetName().equals(rootMdt.getSheetName()))
+				          .findFirst().get();
+
+				if (rootSheetRawData != null)
+				{
+					// 3.b Loop through Raw data attributes and keep on setting in POJO
+
+					for ( TY_AttribVal fldVal : rootSheetRawData.getSheetRawData() )
+					{
+						// Get the Setter by field Name from POJO
+						Method setM = rootobjinfo.Get_Setter_for_FieldName(fldVal.getAttrName());
+						if (setM != null)
+						{
+							// Check if the Field is Mandatory from Metadata and no Value is found in Sheet Raw
+							// Data
+
+							SheetFieldsMetadata fldMdt = rootMdt.getFldsMdt().stream()
+							          .filter(y -> y.getObjField().equals(fldVal.getAttrName())).findFirst().get();
+							if (fldMdt != null)
+
+							{
+								if (fldMdt.isMandatory() && fldVal.getValue() == null)
+								{
+									EX_General egen = new EX_General("ERRNOMANDTVALUE", new Object[]
+									{ fldVal.getAttrLabel(), rootMdt.getSheetName()
+									});
+									msgFormatter.generate_message_snippet(egen);
+									throw egen;
+								}
+
+								// Invoke the POJO Setter with Raw Sheet Data Object Value
+								setM.invoke(scGenObj, fldVal.getValue());
+
+							}
+						}
+
+					}
+
+					// ---4 Create Root Entity Object
+					this.scRoot = ModelObjectFactory.createObjectbyName(rootMdt.getBobjName());
+					if (scRoot != null)
+					{
+						PropertiesMapper.setPropertiesforRootProxyBean(scRoot, scGenObj);
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+	/**
+	 * Create RElated Entities to Root
+	 * 
+	 * @throws EX_General
+	 * @throws IllegalAccessException
+	 * @throws InstantiationException
+	 * @throws EX_InvalidRelationException
+	 * @throws InvocationTargetException
+	 * @throws IllegalArgumentException
+	 */
+	@SuppressWarnings("rawtypes")
+	private void createRelatedEntities() throws EX_General, InstantiationException, IllegalAccessException, IllegalArgumentException,
+	          InvocationTargetException
+	{
+		if (wbMdtSrv != null && wbRawData != null && scRoot != null)
+		{
+			// 1. Get WB Sheet Metadata except Root/Base Sheet
+
+			ArrayList<SCSheetMetadata> sheetsMdt = wbMdtSrv.getWbMetadata().getSheetMetadata();
+
+			for ( SCSheetMetadata shMdt : sheetsMdt )
+			{
+				if (shMdt.isBaseSheet() != true)
+				{
+					String relName = wbMdtSrv.getRelationNameforSheetName(shMdt.getSheetName());
+
+					if (relName != null)
+					{
+
+						// Get Object Information from Object Factory
+						Object_Info objInfo = FrameworkManager.getObjectsInfoFactory().Get_ObjectInfo_byName(shMdt.getBobjName());
+						// Get the Class of the business object name from Object Info.
+						Class obj_class = objInfo.getCurr_Obj_Class();
+
+						if (shMdt.isCollection())
+						{
+							CreateDependantEntity_MultiCard(relName, shMdt, objInfo);
+
+						}
+						else
+						{
+							// Single Cardinality Relations
+
+							Object depObj = obj_class.newInstance();
+							if (depObj != null)
+							{
+								CreateDependantEntity_SingCard(depObj, relName, shMdt, objInfo);
+							}
+						}
+					}
+
+				}
+			}
+		}
+	}
+
+	private void CreateDependantEntity_SingCard(Object depPojo, String relName, SCSheetMetadata shMdt, Object_Info objInfo)
+	          throws EX_General, IllegalAccessException, IllegalArgumentException, InvocationTargetException, EX_InvalidRelationException
+	{
+		if (scRoot != null && wbRawData != null && shMdt != null && depPojo != null)
+		{
+			TY_SingleCard_SheetRawData sheetRawData = wbRawData.getNonCollSheetsRawData().stream()
+			          .filter(x -> x.getSheetName().equals(shMdt.getSheetName())).findFirst().get();
+
+			if (sheetRawData != null)
+			{
+				// 3.b Loop through Raw data attributes and keep on setting in POJO
+
+				for ( TY_AttribVal fldVal : sheetRawData.getSheetRawData() )
+				{
+					// Get the Setter by field Name from POJO
+					Method setM = objInfo.Get_Setter_for_FieldName(fldVal.getAttrName());
+					if (setM != null)
+					{
+						// Check if the Field is Mandatory from Metadata and no Value is found in Sheet Raw
+						// Data
+
+						SheetFieldsMetadata fldMdt = shMdt.getFldsMdt().stream().filter(y -> y.getObjField().equals(fldVal.getAttrName()))
+						          .findFirst().get();
+						if (fldMdt != null)
+
+						{
+							if (fldMdt.isMandatory() && fldVal.getValue() == null)
+							{
+								EX_General egen = new EX_General("ERRNOMANDTVALUE", new Object[]
+								{ fldVal.getAttrLabel(), shMdt.getSheetName()
+								});
+								msgFormatter.generate_message_snippet(egen);
+								throw egen;
+							}
+
+							// Invoke the POJO Setter with Raw Sheet Data Object Value
+							setM.invoke(depPojo, fldVal.getValue());
+
+						}
+					}
+
+				}
+
+				// ---4 Create Single Cardinality Entity Object
+				DependantObject depObjBean = this.scRoot.Create_RelatedEntity(relName);
+				if (depObjBean != null)
+				{
+					PropertiesMapper.setPropertiesforDependantProxyBeanUpdateMode(depObjBean, (DependantObject) depPojo);
+				}
+
+			}
+
+		}
+
+	}
+
+	private void CreateDependantEntity_MultiCard(String relName, SCSheetMetadata shMdt, Object_Info objInfo) throws EX_General,
+	          IllegalAccessException, IllegalArgumentException, InvocationTargetException, EX_InvalidRelationException, InstantiationException
+	{
+		// Get Coll Sheet Raw Data
+		SheetFldValsHeadersList colSheetRawData = wbRawData.getCollSheetsRawData().stream()
+		          .filter(x -> x.getSheetName().equals(shMdt.getSheetName())).findFirst().get();
+
+		// Get FieldsMetadata
+		ArrayList<SheetFieldsMetadata> fldsMdt = shMdt.getFldsMdt();
+		Object depPOJO = null;
+
+		if (colSheetRawData != null)
+		{
+			int header_cnt = 0;
+
+			String headerObjFldName = shMdt.getHeadScanConfig().getObjField();
+
+			// Looping at headers for Sheet
+
+			for ( Object header : colSheetRawData.getHeaders() )
+			{
+				// One POJO for Each Header
+				depPOJO = objInfo.getCurr_Obj_Class().newInstance();
+				if (depPOJO != null)
+				{
+					// 1. Set Header Value in POJO
+
+					// 1.a. Get Setter by Header Field NAme
+
+					Method setterH = objInfo.Get_Setter_for_FieldName(headerObjFldName);
+					if (setterH != null)
+					{
+						// 1.b. Invoke the Setter to Set the Header in POJO
+						setterH.invoke(depPOJO, header);
+					}
+
+					// Set Each Field Value in POJO
+					for ( SheetFieldsMetadata fldMdt : fldsMdt )
+					{
+						// Get Field Values for the Field in question - Currently
+						FldVals fldVals = colSheetRawData.getFldValList().stream().filter(z -> z.getFieldName().equals(fldMdt.getSheetField()))
+						          .findFirst().get();
+						if (fldVals != null)
+						{
+							Method setterF = objInfo.Get_Setter_for_FieldName(fldMdt.getObjField());
+							if (setterF != null)
+							{
+								// Exception in case Field is mandatory and is not specified
+								if (fldMdt.isMandatory() && fldVals.getFieldVals().get(header_cnt) == null)
+								{
+									EX_General egen = new EX_General("ERRNOMANDTVALUE", new Object[]
+									{ fldVals.getFieldName(), shMdt.getSheetName()
+									});
+									msgFormatter.generate_message_snippet(egen);
+									throw egen;
+								}
+								else
+								{
+									// Non Mandatory and Still Null
+									if (fldVals.getFieldVals().get(header_cnt) == null)
+									{
+										Object val = null;
+										switch (fldMdt.getDataType())
+										{
+											case Numerical:
+												val = 0;
+												break;
+
+											case Decimal:
+												val = 0;
+												break;
+
+											case Date:
+												val = " ";
+												break;
+
+											case String:
+												val = " ";
+												break;
+										}
+
+										setterF.invoke(depPOJO, val);
+									}
+									else
+									{
+										// Non Mandatory - No Null - Go Ahead and SET
+										// 1.b. Invoke the Setter to Set the Header in POJO
+										setterF.invoke(depPOJO, fldVals.getFieldVals().get(header_cnt));
+									}
+								}
+
+							}
+						}
+					}
+
+				}
+
+				header_cnt++; // Increment for New header to Pick right values from Fld Values List
+
+				// Once POJO Completely Set - Create DEpendent Object Bean
+				// Create Dependant Entity Object
+				DependantObject depObjBean = this.scRoot.Create_RelatedEntity(relName);
+				if (depObjBean != null)
+				{
+					PropertiesMapper.setPropertiesforDependantProxyBeanUpdateMode(depObjBean, (DependantObject) depPOJO);
+					depPOJO = null;
+				}
+			}
+
+		}
+
+	}
+
+}

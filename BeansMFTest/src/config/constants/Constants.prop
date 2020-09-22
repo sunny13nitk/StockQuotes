@@ -1,0 +1,11 @@
+dburl= jdbc:sqlserver://localhost;databasename=SCWallet;integratedSecurity=true
+dbdriver= com.microsoft.sqlserver.jdbc.SQLServerDriver
+logdir= C:\\ModelLogs
+logsuffix= .log
+JaxPath_Models_xsd= C:\\ModelConfig/Model.xsd
+JaxPath_Models_xml_GEN= C:\\ModelConfig/Model.xml
+JaxPath_Models_xml= config/models/models.xml
+JaxPath_ObjSchemas_xsd= C:\\ModelConfig/ObjSchemas.xsd
+JaxPath_ObjSchemas_xml_GEN= C:\\ModelConfig/ObjSchemas.xml
+JaxPath_ObjSchemas_xml= config/models/objschemas.xml
+MODEL_DEFAULT= ALL

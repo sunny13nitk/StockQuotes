@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:cache="http://www.springframework.org/schema/cache"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util 
+        http://www.springframework.org/schema/util/spring-util-2.5.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
+	<cache:annotation-driven />
+	<aop:aspectj-autoproxy />
+
+
+	<bean id="SCEBean" class="scriptsengine.bussfxn.SCEBean">
+		<!-- Schema Location -->
+		<constructor-arg index="0" value="${SCE_ObjSchemas_xml}" />
+
+		<!-- Model Location -->
+		<constructor-arg index="1" value="${SCE_Models_xml}" />
+	</bean>
+
+	<!-- ******************************* ***** CACHE CONFIGURATION ***** ******************************* -->
+	<bean id="cacheManagerSCE" class="org.springframework.cache.support.SimpleCacheManager">
+		<property name="caches">
+			<set>
+				<!--Scrips Data container Cache by Scrip Code -->
+				<bean
+					class="org.springframework.cache.concurrent.ConcurrentMapCacheFactoryBean">
+					<property name="name" value="scripsCache" />
+				</bean>
+
+				<!-- Scrips Data Container for New Model -->
+				<bean
+					class="org.springframework.cache.concurrent.ConcurrentMapCacheFactoryBean">
+					<property name="name" value="SCscripsCache" />
+				</bean>
+
+				<!--Data Source Cache - DS Srv Name + Key -->
+				<bean
+					class="org.springframework.cache.concurrent.ConcurrentMapCacheFactoryBean">
+					<property name="name" value="DSCache" />
+				</bean>
+			</set>
+		</property>
+	</bean>
+
+
+
+	<bean id="WB_JAXBConstants" class="scriptsengine.uploadengine.JAXB.definitions.PathsJAXB">
+
+		<!-- Schema XSD Generated Loc - Local Drive -->
+		<constructor-arg index="0" value="${JaxPath_WB_xsd}" />
+
+		<!-- XML Generated Loc - Local Drive -->
+		<constructor-arg index="1" value="${JaxPath_WB_xml_GEN}" />
+
+		<!-- XML Load Loc - Classpath -->
+		<constructor-arg index="2" value="${JaxPath_WB_xml}" />
+
+	</bean>
+
+
+	<bean id="PP_JAXBConstants"
+		class="scriptsengine.pricingengine.JAXB.definitions.PathsJAXBPP">
+
+		<!-- Schema XSD Generated Loc - Local Drive -->
+		<constructor-arg index="0" value="${JaxPath_PP_xsd}" />
+
+		<!-- XML Generated Loc - Local Drive -->
+		<constructor-arg index="1" value="${JaxPath_PP_xml_GEN}" />
+
+		<!-- XML Load Loc - Classpath -->
+		<constructor-arg index="2" value="${JaxPath_PP_xml}" />
+
+
+	</bean>
+
+	<bean id="RE_JAXBConstants"
+		class="scriptsengine.reportsengine.JAXB.definitions.PathsJAXBRE">
+
+		<!-- Schema XSD Generated Loc - Local Drive -->
+		<constructor-arg index="0" value="${JaxPath_RE_xsd}" />
+
+		<!-- XML Generated Loc - Local Drive -->
+		<constructor-arg index="1" value="${JaxPath_RE_xml_GEN}" />
+
+		<!-- XML Load Loc - Classpath -->
+		<constructor-arg index="2" value="${JaxPath_RE_xml}" />
+
+
+	</bean>
+
+	<bean id="SS_JAXBConstants" class="scriptsengine.statistics.JAXB.definitions.PathsJAXBSS">
+
+		<!-- Schema XSD Generated Loc - Local Drive -->
+		<constructor-arg index="0" value="${JaxPath_SS_xsd}" />
+
+		<!-- XML Generated Loc - Local Drive -->
+		<constructor-arg index="1" value="${JaxPath_SS_xml_GEN}" />
+
+		<!-- XML Load Loc - Classpath -->
+		<constructor-arg index="2" value="${JaxPath_SS_xml}" />
+
+
+	</bean>
+
+
+	<bean id="TE_JAXBConstants" class="scriptsengine.taxation.JAXB.definitions.PathsJAXBTE">
+
+		<!-- Schema XSD Generated Loc - Local Drive -->
+		<constructor-arg index="0" value="${JaxPath_TE_xsd}" />
+
+		<!-- XML Generated Loc - Local Drive -->
+		<constructor-arg index="1" value="${JaxPath_TE_xml_GEN}" />
+
+		<!-- XML Load Loc - Classpath -->
+		<constructor-arg index="2" value="${JaxPath_TE_xml}" />
+
+
+	</bean>
+
+
+	<bean id="MO_JAXBConstants"
+		class="scriptsengine.utilities.dateStringUtil.JAXB.definitions.PathsJAXBMO">
+
+		<!-- Schema XSD Generated Loc - Local Drive -->
+		<constructor-arg index="0" value="${JaxPath_MO_xsd}" />
+
+		<!-- XML Generated Loc - Local Drive -->
+		<constructor-arg index="1" value="${JaxPath_MO_xml_GEN}" />
+
+		<!-- XML Load Loc - Classpath -->
+		<constructor-arg index="2" value="${JaxPath_MO_xml}" />
+
+
+	</bean>
+
+
+	<bean id="SM_JAXBConstants"
+		class="scriptsengine.uploadengineSC.Metadata.JAXB.definitions.PathsJAXBSM">
+
+		<!-- Schema XSD Generated Loc - Local Drive -->
+		<constructor-arg index="0" value="${JaxPath_SM_xsd}" />
+
+		<!-- XML Generated Loc - Local Drive -->
+		<constructor-arg index="1" value="${JaxPath_SM_xml_GEN}" />
+
+		<!-- XML Load Loc - Classpath -->
+		<constructor-arg index="2" value="${JaxPath_SM_xml}" />
+
+
+	</bean>
+
+
+
+	<!--Allowances Bean corresponding to TY_AllowancesBean -->
+
+	<bean id="AllowancesBean"
+		class="scriptsengine.pricingengine.definitions.TY_AllowancesBean">
+
+		<!-- PE allowance delta allowed from average PE - to avoid too high or 
+			too low prices in case a particular year's PE for Scrip exceeds or is lower 
+			than the average scrip PE for Years -->
+		<!-- PE Variance from Avg. PE allowed on Higher Side - Determine Max PE 
+			Price -->
+		<property name="varPE_allowance" value="60"></property>
+
+		<!-- PE Variance from Avg. PE allowed on Lower Side - Determine Min PE 
+			Price -->
+		<property name="fosPE_allowance" value="20"></property>
+
+		<!-- Consecutive Years PE allowable percentage increase factor -->
+		<property name="adjPE_allowance" value="100"></property>
+
+		<!-- BaseLine Number of Latest Years in Numbers to be considered to PE 
+			weightage Booster -->
+		<property name="PEWeight_NYearsBaseline" value="3"></property>
+
+		<!-- PE Bosst Factor by which avg. last 3 Yrs PE must be increased to accomodate 
+			for giving more precedence to last 3 yrs performance in compariosn to overall 
+			average -->
+		<property name="lastNYrsPE_BoostFactor" value="15"></property>
+
+		<!-- Minimum contribution% by last 3Yrs PE to Avg Pe determination for 
+			Price Projections -->
+		<property name="lastNYrsPE_minContr" value="40"></property>
+
+		<!--Min'm MCap Factor -->
+		<property name="minMcap" value="200"></property>
+
+	</bean>
+
+
+
+
+	<!--Scrip Sell Base Configuration Bean -->
+
+	<bean id="ScripSellConfigBean" class="scriptsengine.customizing.types.TY_ScripSellBaseConfig">
+		<!--Long Term Capital Gain Period in Number of Days -->
+		<property name="numDays_LTCG" value="365" />
+
+		<!-- Opportunity Cost in Percentage per Annum -->
+		<property name="oppCostperAnnum" value="6.75" />
+
+		<!-- Opportunity Cost Quantum Cosideration time Period in # Days -->
+		<property name="numDays_oppCost" value="365" />
+
+		<!-- Capital Gains Tax Rate -->
+		<property name="capitalGainsTaxRate" value="15" />
+
+		<!-- Opportunity Cost Average TDS -->
+		<property name="oppCostTDS" value="10" />
+
+		<!-- Re-invest Taxes and Opportunity Costs to compute Free Shares -->
+		<property name="reInvestTaxOppCost" value="True" />
+
+
+
+
+	</bean>
+
+	<!-- Demat Taxes Configuration Bean -->
+	<bean id="DematTaxes" class="scriptsengine.customizing.types.TY_CU_DematTaxes">
+		<!-- Exchange Transaction Tax (ETT) -->
+		<property name="ETT" value=".003"></property>
+		<!--Service Tax -->
+		<property name="SrvTax" value="14"></property>
+		<!-- Securities Transaction Tax -->
+		<property name="STT" value=".1"></property>
+	</bean>
+
+	<!-- Dividend Taxes Configuration Bean -->
+	<bean id="DividendTaxes" class="scriptsengine.customizing.types.TY_CU_DividendTaxes">
+		<!-- Tax -->
+		<property name="Tax" value=".15"></property>
+		<!--Service Tax -->
+		<property name="Surcharge" value=".12"></property>
+		<!-- Education Cess -->
+		<property name="Ecess" value=".03"></property>
+	</bean>
+
+
+
+	<!-- ********* Scan base package for Annotation based Beans ********** -->
+	<context:component-scan base-package="scriptsengine" />
+	<!-- ********* Scan base package for Annotation based Beans ********** -->
+
+
+
+
+	<!-- Temporary Bean initialization for Portfolio Demat Accounts untill Accounts 
+		Integration is done - To be deleted later -->
+
+	<util:list id="myDemats" value-type="java.lang.String">
+		<value>1208160001289518</value>
+		<value>1663531</value>
+	</util:list>
+
+	<bean id="ZERODHA" class="scriptsengine.portfolio.definitions.TY_DematData">
+		<property name="AcNum" value="1208160001289518"></property>
+		<property name="sourceACNum" value=""></property>
+		<property name="brokerage" value="0"></property>
+	</bean>
+
+
+	<bean id="HDFCSEC" class="scriptsengine.portfolio.definitions.TY_DematData">
+		<property name="AcNum" value="1663531"></property>
+		<property name="sourceACNum" value=""></property>
+		<property name="brokerage" value="0.7"></property>
+	</bean>
+
+
+	<bean id="myDematsTest" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<ref bean="ZERODHA" />
+				<ref bean="HDFCSEC" />
+			</list>
+		</constructor-arg>
+	</bean>
+
+
+
+</beans>

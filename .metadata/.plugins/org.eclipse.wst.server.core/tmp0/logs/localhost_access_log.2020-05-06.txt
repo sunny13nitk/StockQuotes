@@ -1,0 +1,12 @@
+127.0.0.1 - - [06/May/2020:16:11:54 +0530] "GET / HTTP/1.1" 404 709
+0:0:0:0:0:0:0:1 - - [06/May/2020:16:11:56 +0530] "GET /web-customer-tracker-aop/ HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [06/May/2020:16:11:59 +0530] "GET /web-customer-tracker-aop/customer/list HTTP/1.1" 200 4333
+0:0:0:0:0:0:0:1 - - [06/May/2020:16:11:59 +0530] "GET /web-customer-tracker-aop/resources/css/style.css HTTP/1.1" 200 1218
+0:0:0:0:0:0:0:1 - - [06/May/2020:16:12:06 +0530] "GET /web-customer-tracker-aop/customer/showupdateCustomer?customerId=7 HTTP/1.1" 200 1523
+0:0:0:0:0:0:0:1 - - [06/May/2020:16:12:07 +0530] "GET /web-customer-tracker-aop/resources/css/add-customer-style.css HTTP/1.1" 200 566
+0:0:0:0:0:0:0:1 - - [06/May/2020:16:12:09 +0530] "GET /web-customer-tracker-aop/customer/list HTTP/1.1" 200 4333
+0:0:0:0:0:0:0:1 - - [06/May/2020:16:12:16 +0530] "POST /web-customer-tracker-aop/customer/searchbyName HTTP/1.1" 200 1809
+0:0:0:0:0:0:0:1 - - [06/May/2020:16:12:20 +0530] "POST /web-customer-tracker-aop/customer/searchbyName HTTP/1.1" 200 4333
+0:0:0:0:0:0:0:1 - - [06/May/2020:16:12:33 +0530] "POST /web-customer-tracker-aop/customer/searchbyName HTTP/1.1" 200 1180
+0:0:0:0:0:0:0:1 - - [06/May/2020:16:12:36 +0530] "POST /web-customer-tracker-aop/customer/searchbyName HTTP/1.1" 200 1809
+0:0:0:0:0:0:0:1 - - [06/May/2020:16:12:43 +0530] "POST /web-customer-tracker-aop/customer/searchbyName HTTP/1.1" 200 4333

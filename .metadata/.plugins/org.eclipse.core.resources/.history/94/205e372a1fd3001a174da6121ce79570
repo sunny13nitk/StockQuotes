@@ -1,0 +1,78 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
+<html lang="en">
+<head>
+<title>MY App</title>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta charset="UTF-8">
+<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<!-- Metro 4 -->
+<link rel="stylesheet"
+		href="https://cdn.metroui.org.ua/v4.3.2/css/metro-all.min.css">
+
+
+
+</head>
+<body>
+
+		<!-- <div class="container-fluid pos-fixed fixed-top z-top bg-hero"
+				id="header"> -->
+		<div data-role="appbar" data-expand="true"
+				style="background-color: #A072BE; color: white; padding: 5px">
+				<span class="mif-swarm icon mif-3x fg-white"
+						style="padding-right: 10px; padding-bottom: -5px"></span> My App
+				<ul class="app-bar-menu ml-auto text-upper">
+						<li><a href="index.html" class="app-bar-item">Home</a></li>
+						<li><a href="intro.html" class="app-bar-item">Get Started</a></li>
+						<li><a href="m4q-about.html" class="app-bar-item">Components</a></li>
+						<li><a href="examples.html" class="app-bar-item">Examples</a></li>
+						<li><a href="support.html" class="app-bar-item">Support</a></li>
+						<li>
+								<div class="dropdown-button "
+										style="background: transparent; padding-top: 10px">
+										<button class="button dropdown-toggle"
+												style="background: transparent; color: white">Button</button>
+										<ul class="d-menu place-right" style="background: transparent"
+												data-role="dropdown">
+												<li><a href="#">Reply</a></li>
+												<li><a href="#">Reply All</a></li>
+												<li><a href="#">Forward</a></li>
+										</ul>
+								</div>
+						</li>
+				</ul>
+
+
+
+
+		</div>
+
+		<!-- <div data-role="appbar" data-expand-point="md">
+				<a href="#" class="brand no-hover"> <span style="width: 55px;"
+						class="p-2 border bd-dark border-radius"> m<sup>4</sup>
+				</span>
+				</a>
+
+				<ul class="app-bar-menu">
+						<li><a href="#">Home</a></li>
+						<li><a href="#" class="dropdown-toggle">Products</a>
+								<ul class="d-menu" data-role="dropdown">
+										<li><a href="#">Windows 10</a></li>
+										<li><a href="#">Office 365</a></li>
+										<li class="divider bg-lightGray"></li>
+										<li><a href="#">Skype</a></li>
+								</ul></li>
+						<li><a href="#">Blog</a></li>
+						<li><a href="#">Contacts</a></li>
+				</ul>
+		</div> -->
+
+
+		<!-- Metro 4 -->
+		<script src="https://cdn.metroui.org.ua/v4.3.2/js/metro.min.js"></script>
+</body>
+</html>

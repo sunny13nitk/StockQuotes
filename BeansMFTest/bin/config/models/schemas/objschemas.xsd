@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="ObjectSchema" type="objectSchema"/>
+
+  <xs:element name="ObjectSchemas" type="objectSchemas"/>
+
+  <xs:element name="Relations" type="dependantObjectDefn"/>
+
+  <xs:element name="RootObjectMetadata" type="rootObjectDefn"/>
+
+  <xs:complexType name="objectSchemas">
+    <xs:sequence>
+      <xs:element name="ObjectSchema" type="objectSchema" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="objectSchema">
+    <xs:sequence>
+      <xs:element ref="RootObjectMetadata" minOccurs="0"/>
+      <xs:element name="Relations" type="dependantObjectDefn" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="rootObjectDefn" final="extension restriction">
+    <xs:sequence>
+      <xs:element name="Objectname" type="xs:string" minOccurs="0"/>
+      <xs:element name="Tablename" type="xs:string" minOccurs="0"/>
+      <xs:element name="Autokey" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="KeyObjField" type="xs:string" minOccurs="0"/>
+      <xs:element name="KeyTableField" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dependantObjectDefn" final="extension restriction">
+    <xs:sequence>
+      <xs:element name="Depobjname" type="xs:string" minOccurs="0"/>
+      <xs:element name="Rootobjname" type="xs:string" minOccurs="0"/>
+      <xs:element name="Parentdepobj" type="xs:string" minOccurs="0"/>
+      <xs:element name="Relationname" type="xs:string" minOccurs="0"/>
+      <xs:element name="Tablename" type="xs:string" minOccurs="0"/>
+      <xs:element name="Hierarchy" type="xs:int" minOccurs="0"/>
+      <xs:element name="Foreignkeyname" type="xs:string" minOccurs="0"/>
+      <xs:element name="Autokey" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="KeyObjField" type="xs:string" minOccurs="0"/>
+      <xs:element name="KeyTableField" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

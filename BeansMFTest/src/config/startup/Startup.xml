@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop 
+       http://www.springframework.org/schema/aop/spring-aop.xsd">
+	<aop:aspectj-autoproxy />
+	<!-- bean definitions here -->
+
+
+
+	<!-- Properties for Constructing Constants Bean - Properties file Location -->
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:config/constants/Constants.prop</value>
+				<value>classpath:scriptsengine/constants/SCEConstants.prop</value>
+			</list>
+		</property>
+		<property name="ignoreUnresolvablePlaceholders" value="true" />
+	</bean>
+
+	<!-- Constants Bean to Initialize Framework Manager -->
+	<bean id="ConstantBean"
+		class="modelframework.constants.Framework_Constants">
+
+		<!-- Database Url -->
+		<constructor-arg index="0" value="${dburl}" />
+
+		<!-- Database Driver -->
+		<constructor-arg index="1" value="${dbdriver}" />
+
+		<!-- Logging Directory -->
+		<constructor-arg index="2" value="${logdir}" />
+
+		<!-- Logging File Suffix -->
+		<constructor-arg index="3" value="${logsuffix}" />
+
+		<!--JAX Models XSD location - OS/Server Dependant path where you can genarate
+			the XML for Models -->
+		<constructor-arg index="4"
+			value="${JaxPath_Models_xsd}" />
+
+
+		<!--JAX Models XML location -->
+		<constructor-arg index="5"
+			value="${JaxPath_Models_xml}" />
+
+		<!--JAX Models XML location for XML Generation - OS/Server Dependant path
+			where you can genarate the XML for Models -->
+		<!-- After Generation Save as your project/config/models/model.xml file -->
+		<constructor-arg index="6"
+			value="${JaxPath_Models_xml_GEN}" />
+
+		<!--Model to Load by Name - Default Model to Load -->
+		<constructor-arg index="7" value="${MODEL_DEFAULT}" />
+
+		<!--JAX Models XSD location - OS/Server Dependant path where you can genarate
+			the XML for Models -->
+		<constructor-arg index="8"
+			value="${JaxPath_ObjSchemas_xsd}" />
+
+
+		<!--JAX Models XML location -->
+		<constructor-arg index="9"
+			value="${JaxPath_ObjSchemas_xml}" />
+
+		<!--JAX Models XML location for XML Generation - OS/Server Dependant path
+			where you can genarate the XML for Models -->
+		<!-- After Generation Save as your project/config/models/model.xml file -->
+		<constructor-arg index="10"
+			value="${JaxPath_ObjSchemas_xml_GEN}" />
+
+	</bean>
+
+
+
+
+	<!-- Create Model Framework Object Beans that need access to Framework Manger
+		Application Context -->
+	<import
+		resource="classpath:modelframework/beansconfig/modelbeans.xml" />
+
+
+	<!-- Business Function(s) definitions -->
+
+	<!-- SCE Business Function BEan -->
+	<bean id="SCEbussFxn" class="modelframework.definitions.BussFxn">
+		<property name="bussFxnName" value="SCEbuFxn"></property>
+		<property name="beanName" value="SCEBean"></property>
+	</bean>
+
+	<!-- Add to Business Functions bean -->
+
+	<bean id="BussFxns" class="modelframework.definitions.BussFxnList">
+		<property name="bussFxns">
+			<list>
+				<ref bean="SCEbussFxn" />
+			</list>
+
+		</property>
+	</bean>
+	<!-- Business Function(s) definitions -->
+
+
+	<!-- Create Scripts Engine beans -->
+	<import
+		resource="classpath:scriptsengine/beansconfig/scebeans.xml" />
+
+	<!-- ********* Scan base package for Annotation based Beans ********** -->
+	<context:component-scan base-package="mypackage" />
+	<!-- ********* Scan base package for Annotation based Beans ********** -->
+
+
+
+
+	<!-- Execution Bean Definition - To Be rEmoved in Productive Scenario -->
+	<bean id="currExecutionBeanName"
+		class="mypackage.definitions.ExecutionBeanName">
+		<property name="exeBeanName" value="WBUploadSrvExe"></property>
+	</bean>
+
+
+</beans>
+

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="RepSrv_XLSSrv_MapList" type="repSrvXLSSrvMapList"/>
+
+  <xs:element name="RepSrv_XLSSrv_Mapping" type="repSrvXLSSrvMapping"/>
+
+  <xs:complexType name="repSrvXLSSrvMapList">
+    <xs:sequence>
+      <xs:element name="srvMappings" type="repSrvXLSSrvMapping" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="repSrvXLSSrvMapping">
+    <xs:sequence>
+      <xs:element name="repSrvName" type="xs:string" minOccurs="0"/>
+      <xs:element name="XLSSrvName" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

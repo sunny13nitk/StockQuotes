@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Models>
+	<Model>
+		<Name>SCE</Name>
+
+		<!--Scrip Root Object -->
+		<Assemblies>
+			<ObjName>EN_SC_General</ObjName>
+			<Assembly>scriptsengine.uploadengineSC.entities.EN_SC_General</Assembly>
+		</Assemblies>
+
+		<!--Scrip BalanceSheet Object -->
+		<Assemblies>
+			<ObjName>EN_SC_BalSheet</ObjName>
+			<Assembly>scriptsengine.uploadengineSC.entities.EN_SC_BalSheet</Assembly>
+		</Assemblies>
+
+
+		<!--TTM Last 4Q Data Object -->
+		<Assemblies>
+			<ObjName>EN_SC_Last4QData</ObjName>
+			<Assembly>scriptsengine.uploadengineSC.entities.EN_SC_Last4QData</Assembly>
+		</Assemblies>
+
+
+		<!--Trends Data Object -->
+		<Assemblies>
+			<ObjName>EN_SC_Trends</ObjName>
+			<Assembly>scriptsengine.uploadengineSC.entities.EN_SC_Trends</Assembly>
+		</Assemblies>
+
+
+		<!--10YR Data Object -->
+		<Assemblies>
+			<ObjName>EN_SC_10YData</ObjName>
+			<Assembly>scriptsengine.uploadengineSC.entities.EN_SC_10YData</Assembly>
+		</Assemblies>
+
+
+		<!--Quarterly Data Object -->
+		<Assemblies>
+			<ObjName>EN_SC_Quarters</ObjName>
+			<Assembly>scriptsengine.uploadengineSC.entities.EN_SC_Quarters</Assembly>
+		</Assemblies>
+
+
+
+
+
+
+
+
+
+		<!-- Portfolio Object -->
+		<!-- Positions Header -->
+		<Assemblies>
+			<ObjName>OB_Positions_Header</ObjName>
+			<Assembly>scriptsengine.portfolio.pojos.OB_Positions_Header</Assembly>
+		</Assemblies>
+		<!-- Positions Items -->
+		<Assemblies>
+			<ObjName>OB_Dividend_Item</ObjName>
+			<Assembly>scriptsengine.dividends.pojos.OB_Dividend_Item</Assembly>
+		</Assemblies>
+
+		<!-- Dividend Items -->
+		<Assemblies>
+			<ObjName>OB_Dividend_Item</ObjName>
+			<Assembly>scriptsengine.portfolio.pojos.OB_Positions_Item</Assembly>
+		</Assemblies>
+
+
+		<!-- Taxation Objects -->
+		<!-- Taxation Header -->
+		<Assemblies>
+			<ObjName>OB_TaxH</ObjName>
+			<Assembly>scriptsengine.taxation.pojos.OB_TaxH</Assembly>
+		</Assemblies>
+		<!-- Taxation Items -->
+		<Assemblies>
+			<ObjName>OB_TaxI</ObjName>
+			<Assembly>scriptsengine.taxation.pojos.OB_TaxI</Assembly>
+		</Assemblies>
+
+	</Model>
+</Models>

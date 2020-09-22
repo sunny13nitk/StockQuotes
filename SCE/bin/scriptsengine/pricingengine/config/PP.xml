@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PricesProjectionMetadata>
+	<pricingFactorsConfig>
+		<ppFactor>Default Pricing</ppFactor>
+		<beanName>PPS_DefaultStratergy</beanName>
+		<isBase>true</isBase>
+		<isCumulative>false</isCumulative>
+	</pricingFactorsConfig>
+	<pricingFactorsConfig>
+		<ppFactor>Raw Materials Cost</ppFactor>
+		<beanName>PPS_RawMaterialStratergy</beanName>
+		<isBase>false</isBase>
+		<isCumulative>true</isCumulative>
+	</pricingFactorsConfig>
+	<pricingFactorsConfig>
+		<ppFactor>External Factors</ppFactor>
+		<beanName>PPS_ExternalFactorsService</beanName>
+		<isBase>false</isBase>
+		<isCumulative>true</isCumulative>
+	</pricingFactorsConfig>
+	<pricingFactorsConfig>
+		<ppFactor>Sales Forecast</ppFactor>
+		<beanName>PPS_SalesForecastService</beanName>
+		<isBase>false</isBase>
+		<isCumulative>true</isCumulative>
+	</pricingFactorsConfig>
+</PricesProjectionMetadata>

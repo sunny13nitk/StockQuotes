@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="PPFactorMetadata" type="ppFactorMetadata"/>
+
+  <xs:element name="PricesProjectionMetadata" type="pricesProjectionMetadata"/>
+
+  <xs:complexType name="pricesProjectionMetadata">
+    <xs:sequence>
+      <xs:element name="pricingFactorsConfig" type="ppFactorMetadata" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ppFactorMetadata">
+    <xs:sequence>
+      <xs:element name="ppFactor" type="xs:string" minOccurs="0"/>
+      <xs:element name="beanName" type="xs:string" minOccurs="0"/>
+      <xs:element name="isBase" type="xs:boolean"/>
+      <xs:element name="isCumulative" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

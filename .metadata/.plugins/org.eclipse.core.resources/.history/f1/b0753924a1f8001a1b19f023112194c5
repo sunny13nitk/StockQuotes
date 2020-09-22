@@ -1,0 +1,14 @@
+package pp.springboot.repo;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+
+import pp.springboot.entity.Student_Family;
+
+@RepositoryRestResource(path = "familyInfo")
+public interface StudentFamily_Repo extends JpaRepository<Student_Family, Integer>
+{
+	public List<Student_Family> findAllByStudentEmail(
+	        String emailP
+	);
+}

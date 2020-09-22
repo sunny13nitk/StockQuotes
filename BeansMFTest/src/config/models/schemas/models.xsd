@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="Assemblies" type="modelAssembly"/>
+
+  <xs:element name="Model" type="model"/>
+
+  <xs:element name="Models" type="models"/>
+
+  <xs:complexType name="models">
+    <xs:sequence>
+      <xs:element name="Models" type="model" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="model">
+    <xs:sequence>
+      <xs:element name="Name" type="xs:string" minOccurs="0"/>
+      <xs:element name="Assemblies" type="modelAssembly" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="modelAssembly">
+    <xs:sequence>
+      <xs:element name="ObjName" type="xs:string" minOccurs="0"/>
+      <xs:element name="Assembly" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

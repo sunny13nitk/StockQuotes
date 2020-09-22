@@ -1,0 +1,6 @@
+package pp.springboot.rest;
+
+public class CustomerRestSpDataJPAController
+{
+	
+}

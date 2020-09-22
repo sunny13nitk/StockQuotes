@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="Obj_ITaxableSrv_MapList" type="objITaxableSrvMapList"/>
+
+  <xs:element name="Obj_ITaxableSrv_Mapping" type="objITaxableSrvMapping"/>
+
+  <xs:complexType name="objITaxableSrvMapList">
+    <xs:sequence>
+      <xs:element name="objTaxSrvMappings" type="objITaxableSrvMapping" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="objITaxableSrvMapping">
+    <xs:sequence>
+      <xs:element name="objName" type="xs:string" minOccurs="0"/>
+      <xs:element name="ITaxableSrvName" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

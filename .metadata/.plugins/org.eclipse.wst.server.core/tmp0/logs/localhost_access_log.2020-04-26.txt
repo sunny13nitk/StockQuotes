@@ -1,0 +1,8 @@
+127.0.0.1 - - [26/Apr/2020:14:13:49 +0530] "GET / HTTP/1.1" 404 709
+0:0:0:0:0:0:0:1 - - [26/Apr/2020:14:13:49 +0530] "GET /web-customer-tracker/ HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [26/Apr/2020:14:13:52 +0530] "GET /web-customer-tracker/customer/list HTTP/1.1" 200 1040
+0:0:0:0:0:0:0:1 - - [26/Apr/2020:14:13:52 +0530] "GET /web-customer-tracker/resources/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [26/Apr/2020:14:45:33 +0530] "GET / HTTP/1.1" 404 709
+0:0:0:0:0:0:0:1 - - [26/Apr/2020:14:45:34 +0530] "GET /web-customer-tracker/ HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [26/Apr/2020:14:45:37 +0530] "GET /web-customer-tracker/customer/list HTTP/1.1" 200 1475
+0:0:0:0:0:0:0:1 - - [26/Apr/2020:14:45:41 +0530] "GET /web-customer-tracker/customer/addCustomer HTTP/1.1" 200 145

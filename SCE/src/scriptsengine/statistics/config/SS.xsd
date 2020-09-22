@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="StatsAttrDetails" type="statsAttrDetails"/>
+
+  <xs:element name="StatsAttrList" type="statsAttrList"/>
+
+  <xs:complexType name="statsAttrList">
+    <xs:sequence>
+      <xs:element name="statAttrs" type="statsAttrDetails" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="statsAttrDetails">
+    <xs:sequence>
+      <xs:element name="attrName" type="xs:string" minOccurs="0"/>
+      <xs:element name="figuresSrvBean" type="xs:string" minOccurs="0"/>
+      <xs:element name="sheetName" type="xs:string" minOccurs="0"/>
+      <xs:element name="fieldName" type="xs:string" minOccurs="0"/>
+      <xs:element name="keyfldName" type="xs:string" minOccurs="0"/>
+      <xs:element name="wrtFaceValue" type="xs:boolean"/>
+      <xs:element name="singleVal" type="xs:boolean"/>
+      <xs:element name="trendON" type="xs:boolean"/>
+      <xs:element name="deltaON" type="xs:boolean"/>
+      <xs:element name="avgON" type="xs:boolean"/>
+      <xs:element name="avgdeltaON" type="xs:boolean"/>
+      <xs:element name="highBetterON" type="xs:boolean"/>
+      <xs:element name="selfsecSpON" type="xs:boolean"/>
+      <xs:element name="avgDeltasecSpON" type="xs:boolean"/>
+      <xs:element name="avgDeltaglobalON" type="xs:boolean"/>
+      <xs:element name="longtermIncON" type="xs:boolean"/>
+      <xs:element name="alertON" type="xs:boolean"/>
+      <xs:element name="alertDetSrvBean" type="xs:string" minOccurs="0"/>
+      <xs:element name="mShareAnalysisON" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="J2EE_IMPORT_null">
+		<item value="C:\Back Up Labs\Sunny\Workspaces\STS-WS2\nse-stock-quote-rest-demo.war"/>
+		<item value="C:\Back Up Labs\Sunny\Workspaces\STS-WS2\spring-crm-rest-demo.war"/>
+		<item value="C:\Back Up Labs\Sunny\Workspaces\STS-WS2\crm-web-app-rest-client-demo.war"/>
+	</list>
+	<list key="MRU_RUNTIME_STORE">
+		<item value="Apache Tomcat 9"/>
+		<item value="Apache Tomcat v9.0"/>
+	</list>
+</section>

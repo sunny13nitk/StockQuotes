@@ -1,0 +1,10 @@
+package root.config;
+
+
+@Configuration
+@EnableWebMvc
+@ComponentScan(basePackages="root")
+public class DemoAppConfig 
+{
+
+}

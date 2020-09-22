@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ObjectSchemas>
+<!-- Scrip Object -->
+	<ObjectSchema>
+		<RootObjectMetadata>
+			<Objectname>OB_Scrip</Objectname>
+			<Tablename>TB_Scrip</Tablename>
+			<Autokey>false</Autokey>
+			<KeyObjField>Scrip_Code</KeyObjField>
+		</RootObjectMetadata>
+		<Relations>
+			<Depobjname>OB_Scrip_BADet</Depobjname>
+			<Rootobjname>OB_Scrip</Rootobjname>
+			<Relationname>OB_Scrip_BADet_Rel</Relationname>
+			<Tablename>TB_Scrip_BADet</Tablename>
+			<Hierarchy>1</Hierarchy>
+			<Foreignkeyname>Scrip_Code</Foreignkeyname>
+			<Autokey>true</Autokey>
+			<KeyTableField>Det_ID</KeyTableField>
+		</Relations>
+		<Relations>
+			<Depobjname>OB_Scrip_FinDet</Depobjname>
+			<Rootobjname>OB_Scrip</Rootobjname>
+			<Relationname>OB_Scrip_FinDet_Rel</Relationname>
+			<Tablename>TB_Scrip_FinDet</Tablename>
+			<Hierarchy>1</Hierarchy>
+			<Foreignkeyname>Scrip_Code</Foreignkeyname>
+			<Autokey>true</Autokey>
+			<KeyTableField>Fin_ID</KeyTableField>
+		</Relations>
+	</ObjectSchema>
+	<ObjectSchema>
+		<RootObjectMetadata>
+			<Objectname>OB_Txn_Catg</Objectname>
+			<Tablename>TB_Txn_Catg</Tablename>
+			<Autokey>true</Autokey>
+			<KeyTableField>ID</KeyTableField>
+		</RootObjectMetadata>
+	</ObjectSchema>
+
+<!-- Account Object -->
+	<ObjectSchema>
+		<RootObjectMetadata>
+			<Objectname>OB_Account</Objectname>
+			<Tablename>TB_Account</Tablename>
+			<Autokey>false</Autokey>
+			<KeyObjField>AC_Num</KeyObjField>
+		</RootObjectMetadata>
+		<Relations>
+			<Depobjname>OB_Address</Depobjname>
+			<Rootobjname>OB_Account</Rootobjname>
+			<Relationname>Account_Address_Rel</Relationname>
+			<Tablename>TB_Address</Tablename>
+			<Hierarchy>1</Hierarchy>
+			<Foreignkeyname>AC_Num</Foreignkeyname>
+			<Autokey>true</Autokey>
+			<KeyTableField>Address_ID</KeyTableField>
+		</Relations>
+		<Relations>
+			<Depobjname>OB_TelDetails</Depobjname>
+			<Relationname>Address_Tel_Rel</Relationname>
+			<Parentdepobj>OB_Address</Parentdepobj>
+			<Tablename>TB_Telephone</Tablename>
+			<Hierarchy>2</Hierarchy>
+			<Foreignkeyname>Address_ID</Foreignkeyname>
+			<Autokey>true</Autokey>
+			<KeyTableField>TELID</KeyTableField>
+		</Relations>
+
+	</ObjectSchema>
+</ObjectSchemas>

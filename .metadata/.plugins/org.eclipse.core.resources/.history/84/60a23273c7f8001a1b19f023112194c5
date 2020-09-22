@@ -1,0 +1,7 @@
+package pp.springboot.rest;
+
+@RestController
+public class StudentRestController
+{
+	
+}

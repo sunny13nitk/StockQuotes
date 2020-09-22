@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;root.springdemo&apos; to &apos;root.sceREST&apos;&#x0D;&#x0A;- Original project: &apos;SCERest&apos;&#x0D;&#x0A;- Original element: &apos;SCERest/src/main/java/root.springdemo&apos;&#x0D;&#x0A;- Renamed element: &apos;SCERest/src/main/java/root.sceREST&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update fully qualified names in &apos;*&apos; files&#x0D;&#x0A;- Update textual occurrences in comments and strings&#x0D;&#x0A;- Rename subpackages of the package" description="Rename package &apos;root.springdemo&apos;" flags="589830" hierarchical="true" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java&lt;root.springdemo" name="root.sceREST" patterns="*" qualified="true" references="true" stamp="1594538671115" textual="true" version="1.0"/>
+</session>

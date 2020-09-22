@@ -1,0 +1,3 @@
+# -------- DB Properties -----------------
+spring.datasource.url=jdbc:sqlserver://localhost;databasename=PurplePebbles_Demo;integratedSecurity=true
+

@@ -1,0 +1,18 @@
+package scriptsengine.uploadengineSC.scripSheetServices.interfaces;
+
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import scriptsengine.uploadengine.exceptions.EX_General;
+
+/**
+ * 
+ * Interface to get SC Code from XLS Sheet
+ */
+public interface ISCCode_Getter_XLS
+{
+
+	public String getSCCode(String FilePath) throws EX_General;
+
+	public String getSCCode(XSSFWorkbook wbCtxt) throws EX_General;
+
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="springs-mvc-demo-java">
+        <wb-resource deploy-path="/" source-path="/WebContent"/>
+        <property name="context-root" value="springs-mvc-demo-java"/>
+        <property name="java-output-path" value="/springs-mvc-demo-java/build/classes"/>
+    </wb-module>
+</project-modules>

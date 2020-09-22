@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Models>
+	<Model>
+		<Name>SCE</Name>
+
+		<!--Scrip Root Object -->
+		<Assemblies>
+			<ObjName>OB_Scrip_General</ObjName>
+			<Assembly>scriptsengine.pojos.OB_Scrip_General</Assembly>
+		</Assemblies>
+
+		<!--Scrip BalanceSheet Object -->
+		<Assemblies>
+			<ObjName>OB_Scrip_BalSheet</ObjName>
+			<Assembly>scriptsengine.pojos.OB_Scrip_BalSheet</Assembly>
+		</Assemblies>
+
+		<!--Scrip Shareholding Object -->
+		<Assemblies>
+			<ObjName>OB_Scrip_Shareholding</ObjName>
+			<Assembly>scriptsengine.pojos.OB_Scrip_Shareholding</Assembly>
+		</Assemblies>
+
+		<!--Quarterly Data Object -->
+		<Assemblies>
+			<ObjName>OB_Scrip_QuartersData</ObjName>
+			<Assembly>scriptsengine.pojos.OB_Scrip_QuartersData</Assembly>
+		</Assemblies>
+
+
+		<!--Scrip Sectors -->
+		<Assemblies>
+			<ObjName>OB_Scrip_Sector</ObjName>
+			<Assembly>scriptsengine.pojos.OB_Scrip_Sector</Assembly>
+		</Assemblies>
+
+		<!--Scrip Ratios -->
+		<Assemblies>
+			<ObjName>OB_Scrip_Ratios</ObjName>
+			<Assembly>scriptsengine.pojos.OB_Scrip_Ratios</Assembly>
+		</Assemblies>
+
+		<!--Scrip Expenses -->
+		<Assemblies>
+			<ObjName>OB_Scrip_Expenses</ObjName>
+			<Assembly>scriptsengine.pojos.OB_Scrip_Expenses</Assembly>
+		</Assemblies>
+
+		<!--Scrip Raw Materials -->
+		<Assemblies>
+			<ObjName>OB_Scrip_RawMaterial</ObjName>
+			<Assembly>scriptsengine.pojos.OB_Scrip_RawMaterial</Assembly>
+		</Assemblies>
+
+		<!--Scrip Finished Products -->
+		<Assemblies>
+			<ObjName>OB_Scrip_FinishedProduct</ObjName>
+			<Assembly>scriptsengine.pojos.OB_Scrip_FinishedProduct</Assembly>
+		</Assemblies>
+
+
+
+		<!-- Portfolio Object -->
+		<!-- Positions Header -->
+		<Assemblies>
+			<ObjName>OB_Positions_Header</ObjName>
+			<Assembly>scriptsengine.portfolio.pojos.OB_Positions_Header</Assembly>
+		</Assemblies>
+		<!-- Positions Items -->
+		<Assemblies>
+			<ObjName>OB_Dividend_Item</ObjName>
+			<Assembly>scriptsengine.dividends.pojos.OB_Dividend_Item</Assembly>
+		</Assemblies>
+		
+		<!-- Dividend Items -->
+		<Assemblies>
+			<ObjName>OB_Dividend_Item</ObjName>
+			<Assembly>scriptsengine.portfolio.pojos.OB_Positions_Item</Assembly>
+		</Assemblies>
+
+
+		<!-- Taxation Objects -->
+		<!-- Taxation Header -->
+		<Assemblies>
+			<ObjName>OB_TaxH</ObjName>
+			<Assembly>scriptsengine.taxation.pojos.OB_TaxH</Assembly>
+		</Assemblies>
+		<!-- Taxation Items -->
+		<Assemblies>
+			<ObjName>OB_TaxI</ObjName>
+			<Assembly>scriptsengine.taxation.pojos.OB_TaxI</Assembly>
+		</Assemblies>
+
+	</Model>
+</Models>

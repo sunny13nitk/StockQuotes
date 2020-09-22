@@ -1,0 +1,11 @@
+package root.config;
+
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+@EnableWebMvc
+@ComponentScan(basePackages="root")
+public class DemoAppConfig 
+{
+
+}
